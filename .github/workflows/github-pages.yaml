@@ -1,0 +1,60 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Output repository name
+        id: repo
+        run: echo "name=${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}" >> $GITHUB_OUTPUT
+      - name: Fetch fvm-config
+        uses: kuhnroyal/flutter-fvm-config-action@v1
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: ${{ env.FLUTTER_CHANNEL }}
+          cache: true
+      - name: Install dependencies
+        run: flutter pub get
+      - name: Build web app
+        run: |
+          flutter build web \
+            --base-href "/${{ steps.repo.outputs.name }}/" \
+            --web-renderer canvaskit \
+            --release
+        shell: bash
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifacts
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: build/web
+  deploy:
+    needs: build
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
