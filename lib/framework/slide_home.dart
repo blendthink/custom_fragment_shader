@@ -28,19 +28,48 @@ final class SlideHome extends StatelessWidget {
               onInvoke: (_) => context.framework.menu(),
             ),
           },
-          child: Align(
-            alignment: Alignment.topCenter,
-            child: AspectRatio(
-              aspectRatio: 16 / 9,
+          child: _SlideFrame(
+            child: _child,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+final class _SlideFrame extends StatelessWidget {
+  const _SlideFrame({
+    required Widget child,
+  }) : _child = child;
+
+  final Widget _child;
+
+  @override
+  Widget build(BuildContext context) {
+    final data = MediaQuery.of(context);
+    return Align(
+      alignment: Alignment.topCenter,
+      child: AspectRatio(
+        aspectRatio: 16 / 9,
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            final frameHeight = constraints.maxHeight;
+            final frameScale = frameHeight / 1080;
+            return MediaQuery(
+              data: data.copyWith(
+                textScaleFactor: frameScale,
+              ),
               child: Stack(
                 children: [
                   const _SlideBackground(),
-                  _SlideBody(child: _child),
-                  const _SlideFooter(),
+                  _child,
+                  _SlideFooter(
+                    frameHeight: frameHeight,
+                  ),
                 ],
               ),
-            ),
-          ),
+            );
+          },
         ),
       ),
     );
@@ -69,56 +98,32 @@ final class _SlideBackground extends StatelessWidget {
   }
 }
 
-final class _SlideBody extends StatelessWidget {
-  const _SlideBody({
-    required Widget child,
-  }) : _navigator = child;
-
-  final Widget _navigator;
-
-  @override
-  Widget build(BuildContext context) {
-    final data = MediaQuery.of(context);
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final scale = constraints.maxHeight / 1080;
-        return MediaQuery(
-          data: data.copyWith(
-            textScaleFactor: scale,
-          ),
-          child: _navigator,
-        );
-      },
-    );
-  }
-}
-
 final class _SlideFooter extends StatelessWidget {
-  const _SlideFooter();
+  const _SlideFooter({
+    required double frameHeight,
+  }) : _frameHeight = frameHeight;
+
+  final double _frameHeight;
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final height = constraints.maxHeight / 5;
-        return Align(
-          alignment: Alignment.bottomCenter,
-          child: SlideNumberBuilder(
-            builder: (context, slideNumber) {
-              return SizedBox(
-                height: height,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text('FlutterKaigi 2023'),
-                    Text('$slideNumber'),
-                  ],
-                ),
-              );
-            },
-          ),
-        );
-      },
+    final height = _frameHeight / 12;
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: SlideNumberBuilder(
+        builder: (context, slideNumber) {
+          return SizedBox(
+            height: height,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text('FlutterKaigi 2023'),
+                Text('$slideNumber'),
+              ],
+            ),
+          );
+        },
+      ),
     );
   }
 }
