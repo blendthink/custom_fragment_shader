@@ -65,6 +65,7 @@ final class _SlideFrame extends StatelessWidget {
                   _child,
                   _SlideFooter(
                     frameHeight: frameHeight,
+                    frameScale: frameScale,
                   ),
                 ],
               ),
@@ -101,25 +102,34 @@ final class _SlideBackground extends StatelessWidget {
 final class _SlideFooter extends StatelessWidget {
   const _SlideFooter({
     required double frameHeight,
-  }) : _frameHeight = frameHeight;
+    required double frameScale,
+  })  : _frameHeight = frameHeight,
+        _frameScale = frameScale;
 
   final double _frameHeight;
+  final double _frameScale;
 
   @override
   Widget build(BuildContext context) {
     final height = _frameHeight / 12;
+    final horizontalPadding = 36 * _frameScale;
     return Align(
       alignment: Alignment.bottomCenter,
       child: SlideNumberBuilder(
         builder: (context, slideNumber) {
           return SizedBox(
             height: height,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text('FlutterKaigi 2023'),
-                Text('$slideNumber'),
-              ],
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: horizontalPadding,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text('FlutterKaigi 2023'),
+                  Text('$slideNumber'),
+                ],
+              ),
             ),
           );
         },
