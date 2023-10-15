@@ -45,4 +45,6 @@ final class SlideQuery extends InheritedModel<SlideQueryAspect> {
 
 extension SlideQueryX on BuildContext {
   int get slideNumber => SlideQuery._slideNumberOf(this);
+
+  bool get shouldShowSlideNumber => slideNumber > 0;
 }

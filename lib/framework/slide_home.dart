@@ -137,9 +137,12 @@ final class _SlideFooter extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             flutterKaigiLogo,
-            Text(
-              '${context.slideNumber}',
-              style: textStyle,
+            Visibility(
+              visible: context.shouldShowSlideNumber,
+              child: Text(
+                '${context.slideNumber}',
+                style: textStyle,
+              ),
             ),
           ],
         ),
