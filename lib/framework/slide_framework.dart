@@ -10,10 +10,6 @@ final class SlideFramework extends InheritedWidget {
 
   final SlideRouter _router;
 
-  SlideRouter get router => _router;
-
-  int get slideNumber => _router.currentIndex + 1;
-
   void previous() => _router.previous();
 
   void next() => _router.next();

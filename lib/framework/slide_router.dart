@@ -12,15 +12,15 @@ final class SlideRouter {
   late final List<_SlideRoute> _slideRoutes = _slides
       .mapIndexed(
         (i, s) => _SlideRoute(
-          path: '/${i + 1}',
+          path: '/$i',
           pageBuilder: s.pageBuilder,
         ),
       )
       .toList();
 
-  late GoRouter _routerConfig;
+  late final GoRouter routerConfig = _buildConfig();
 
-  GoRouter buildConfig() {
+  GoRouter _buildConfig() {
     final routes = _slideRoutes
         .map(
           (slideRoute) => GoRoute(
@@ -30,17 +30,17 @@ final class SlideRouter {
         )
         .toList();
 
-    return _routerConfig = GoRouter(
+    return GoRouter(
       initialLocation: routes.first.path,
       routes: routes,
     );
   }
 
   void addListener(void Function() listener) =>
-      _routerConfig.routeInformationProvider.addListener(listener);
+      routerConfig.routerDelegate.addListener(listener);
 
   void removeListener(void Function() listener) =>
-      _routerConfig.routeInformationProvider.removeListener(listener);
+      routerConfig.routerDelegate.removeListener(listener);
 
   void previous() {
     final currentIndex = this.currentIndex;
@@ -51,7 +51,7 @@ final class SlideRouter {
     if (prevIndex < 0) return;
 
     final slideRoute = _slideRoutes[prevIndex];
-    _routerConfig.go(slideRoute.path);
+    routerConfig.go(slideRoute.path);
   }
 
   void next() {
@@ -63,7 +63,7 @@ final class SlideRouter {
     if (nextIndex >= _slideRoutes.length) return;
 
     final slideRoute = _slideRoutes[nextIndex];
-    _routerConfig.go(slideRoute.path);
+    routerConfig.go(slideRoute.path);
   }
 
   int get currentIndex => _slideRoutes.indexWhere(
@@ -71,10 +71,10 @@ final class SlideRouter {
       );
 
   Uri get _currentUri {
-    final lastMatch = _routerConfig.routerDelegate.currentConfiguration.last;
+    final lastMatch = routerConfig.routerDelegate.currentConfiguration.last;
     final matchList = lastMatch is ImperativeRouteMatch
         ? lastMatch.matches
-        : _routerConfig.routerDelegate.currentConfiguration;
+        : routerConfig.routerDelegate.currentConfiguration;
 
     return matchList.uri;
   }

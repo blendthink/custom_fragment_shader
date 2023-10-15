@@ -1,12 +1,13 @@
 import 'package:custom_fragment_shader/framework/slide_framework.dart';
 import 'package:custom_fragment_shader/framework/slide_home.dart';
+import 'package:custom_fragment_shader/framework/slide_query.dart';
 import 'package:custom_fragment_shader/framework/slide_router.dart';
 import 'package:custom_fragment_shader/framework/slide_widget.dart';
 import 'package:custom_fragment_shader/framework/slide_intents.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-final class SlideApp extends StatelessWidget {
+final class SlideApp extends StatefulWidget {
   const SlideApp({
     required ThemeData theme,
     required List<SlideStatelessWidget> slides,
@@ -18,17 +19,44 @@ final class SlideApp extends StatelessWidget {
   final List<SlideStatelessWidget> _slides;
 
   @override
-  Widget build(BuildContext context) {
-    final router = SlideRouter(slides: _slides);
-    final routerConfig = router.buildConfig();
+  State<SlideApp> createState() => _SlideAppState();
+}
 
+class _SlideAppState extends State<SlideApp> {
+  late final _router = SlideRouter(slides: widget._slides);
+
+  int _slideNumber = 0;
+
+  void _onRouteChange() {
+    setState(() => _slideNumber = _router.currentIndex);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _router.addListener(_onRouteChange);
+  }
+
+  @override
+  void dispose() {
+    _router.removeListener(_onRouteChange);
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp.router(
-      theme: _theme,
+      theme: widget._theme,
       shortcuts: _shortcuts,
-      routerConfig: routerConfig,
+      routerConfig: _router.routerConfig,
       builder: (_, child) => SlideFramework(
-        router: router,
-        child: SlideHome(child: child!),
+        router: _router,
+        child: SlideQuery(
+          slideNumber: _slideNumber,
+          child: SlideHome(
+            child: child!,
+          ),
+        ),
       ),
     );
   }

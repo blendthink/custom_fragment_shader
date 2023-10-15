@@ -1,6 +1,6 @@
 import 'package:custom_fragment_shader/framework/slide_framework.dart';
-import 'package:custom_fragment_shader/framework/slide_number_listener.dart';
 import 'package:custom_fragment_shader/framework/slide_intents.dart';
+import 'package:custom_fragment_shader/framework/slide_query.dart';
 import 'package:custom_fragment_shader/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
@@ -132,22 +132,18 @@ final class _SlideFooter extends StatelessWidget {
     final framePadding = 12 * _frameScale;
     return Align(
       alignment: Alignment.bottomCenter,
-      child: SlideNumberBuilder(
-        builder: (context, slideNumber) {
-          return Padding(
-            padding: EdgeInsets.all(framePadding),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                flutterKaigiLogo,
-                Text(
-                  '$slideNumber',
-                  style: textStyle,
-                ),
-              ],
+      child: Padding(
+        padding: EdgeInsets.all(framePadding),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            flutterKaigiLogo,
+            Text(
+              '${context.slideNumber}',
+              style: textStyle,
             ),
-          );
-        },
+          ],
+        ),
       ),
     );
   }
