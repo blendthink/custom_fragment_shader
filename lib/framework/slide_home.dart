@@ -1,6 +1,7 @@
 import 'package:custom_fragment_shader/framework/slide_framework.dart';
 import 'package:custom_fragment_shader/framework/slide_number_listener.dart';
 import 'package:custom_fragment_shader/framework/slide_intents.dart';
+import 'package:custom_fragment_shader/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 final class SlideHome extends StatelessWidget {
@@ -101,27 +102,44 @@ final class _SlideBackground extends StatelessWidget {
 final class _SlideFooter extends StatelessWidget {
   const _SlideFooter({
     required double frameScale,
-  })  : _frameScale = frameScale;
+  }) : _frameScale = frameScale;
 
   final double _frameScale;
 
   @override
   Widget build(BuildContext context) {
-    final padding = 12 * _frameScale;
     final textStyle = Theme.of(context).textTheme.labelSmall;
+
+    final iconSize = 20 * _frameScale;
+    final paddingBetweenIconAndText = 4 * _frameScale;
+    final flutterKaigiLogo = Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Assets.flutterkaigiLogo.svg(
+          width: iconSize,
+          height: iconSize,
+        ),
+        SizedBox(
+          width: paddingBetweenIconAndText,
+        ),
+        Text(
+          'FlutterKaigi 2023',
+          style: textStyle,
+        ),
+      ],
+    );
+
+    final framePadding = 12 * _frameScale;
     return Align(
       alignment: Alignment.bottomCenter,
       child: SlideNumberBuilder(
         builder: (context, slideNumber) {
           return Padding(
-            padding: EdgeInsets.all(padding),
+            padding: EdgeInsets.all(framePadding),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  'FlutterKaigi 2023',
-                  style: textStyle,
-                ),
+                flutterKaigiLogo,
                 Text(
                   '$slideNumber',
                   style: textStyle,
