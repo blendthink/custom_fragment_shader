@@ -22,6 +22,7 @@ dependencies:
       ref: 6c66ad23ee79749f30a8eece542cf54eaf157ed8
       path: plugins/window_size
   flutter_svg: ^2.0.7
+  google_fonts: ^6.1.0
 
 dev_dependencies:
   flutter_test:
@@ -34,6 +35,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+    - google_fonts/Poppins/
 
 flutter_gen:
   integrations:

@@ -4,6 +4,7 @@ import 'package:custom_fragment_shader/slides/agenda_slide.dart';
 import 'package:custom_fragment_shader/slides/intro_slide.dart';
 import 'package:custom_fragment_shader/slides/outro_slide.dart';
 import 'package:custom_fragment_shader/slides/title_slide.dart';
+import 'package:custom_fragment_shader/theme.dart';
 import 'package:flutter/material.dart';
 
 final class App extends StatelessWidget {
@@ -18,9 +19,7 @@ final class App extends StatelessWidget {
       OutroSlide(),
     ];
     return SlideApp(
-      theme: ThemeData.dark(
-        useMaterial3: true,
-      ),
+      theme: appTheme,
       slides: slides,
     );
   }

@@ -109,7 +109,7 @@ final class _SlideFooter extends StatelessWidget {
     final textStyle = Theme.of(context).textTheme.labelSmall;
 
     final frameScale = context.frameScale;
-    final iconSize = 20 * frameScale;
+    final iconSize = 24 * frameScale;
     final paddingBetweenIconAndText = 4 * frameScale;
     final flutterKaigiLogo = Row(
       mainAxisSize: MainAxisSize.min,
@@ -123,7 +123,9 @@ final class _SlideFooter extends StatelessWidget {
         ),
         Text(
           'FlutterKaigi 2023',
-          style: textStyle,
+          style: textStyle?.copyWith(
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ],
     );
