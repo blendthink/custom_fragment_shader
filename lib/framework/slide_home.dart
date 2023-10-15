@@ -54,7 +54,7 @@ final class _SlideFrame extends StatelessWidget {
         child: LayoutBuilder(
           builder: (context, constraints) {
             final frameHeight = constraints.maxHeight;
-            final frameScale = frameHeight / 1080;
+            final frameScale = frameHeight / 360;
             return MediaQuery(
               data: data.copyWith(
                 textScaleFactor: frameScale,
@@ -64,7 +64,6 @@ final class _SlideFrame extends StatelessWidget {
                   const _SlideBackground(),
                   _child,
                   _SlideFooter(
-                    frameHeight: frameHeight,
                     frameScale: frameScale,
                   ),
                 ],
@@ -101,35 +100,33 @@ final class _SlideBackground extends StatelessWidget {
 
 final class _SlideFooter extends StatelessWidget {
   const _SlideFooter({
-    required double frameHeight,
     required double frameScale,
-  })  : _frameHeight = frameHeight,
-        _frameScale = frameScale;
+  })  : _frameScale = frameScale;
 
-  final double _frameHeight;
   final double _frameScale;
 
   @override
   Widget build(BuildContext context) {
-    final height = _frameHeight / 12;
-    final horizontalPadding = 36 * _frameScale;
+    final padding = 12 * _frameScale;
+    final textStyle = Theme.of(context).textTheme.labelSmall;
     return Align(
       alignment: Alignment.bottomCenter,
       child: SlideNumberBuilder(
         builder: (context, slideNumber) {
-          return SizedBox(
-            height: height,
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: horizontalPadding,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text('FlutterKaigi 2023'),
-                  Text('$slideNumber'),
-                ],
-              ),
+          return Padding(
+            padding: EdgeInsets.all(padding),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'FlutterKaigi 2023',
+                  style: textStyle,
+                ),
+                Text(
+                  '$slideNumber',
+                  style: textStyle,
+                ),
+              ],
             ),
           );
         },
