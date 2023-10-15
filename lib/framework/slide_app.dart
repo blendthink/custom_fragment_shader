@@ -32,9 +32,12 @@ class _SlideAppState extends State<SlideApp> {
   }
 
   @override
-  void initState() {
-    super.initState();
-    _router.addListener(_onRouteChange);
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _router.addListener(_onRouteChange);
+    });
   }
 
   @override
