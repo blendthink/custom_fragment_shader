@@ -37,6 +37,9 @@ class _SlideAppState extends State<SlideApp> {
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _router.addListener(_onRouteChange);
+
+      // Required when navigating directly to a slide via a URL or deep link.
+      _onRouteChange();
     });
   }
 

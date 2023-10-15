@@ -37,10 +37,10 @@ final class SlideRouter {
   }
 
   void addListener(void Function() listener) =>
-      routerConfig.routerDelegate.addListener(listener);
+      routerConfig.routeInformationProvider.addListener(listener);
 
   void removeListener(void Function() listener) =>
-      routerConfig.routerDelegate.removeListener(listener);
+      routerConfig.routeInformationProvider.removeListener(listener);
 
   void previous() {
     final currentIndex = this.currentIndex;
