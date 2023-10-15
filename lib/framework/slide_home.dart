@@ -1,3 +1,4 @@
+import 'package:custom_fragment_shader/framework/slide_frame_query.dart';
 import 'package:custom_fragment_shader/framework/slide_framework.dart';
 import 'package:custom_fragment_shader/framework/slide_intents.dart';
 import 'package:custom_fragment_shader/framework/slide_query.dart';
@@ -56,18 +57,19 @@ final class _SlideFrame extends StatelessWidget {
           builder: (context, constraints) {
             final frameHeight = constraints.maxHeight;
             final frameScale = frameHeight / 360;
-            return MediaQuery(
-              data: data.copyWith(
-                textScaleFactor: frameScale,
-              ),
-              child: Stack(
-                children: [
-                  const _SlideBackground(),
-                  _child,
-                  _SlideFooter(
-                    frameScale: frameScale,
-                  ),
-                ],
+            return SlideFrameQuery(
+              frameScale: frameScale,
+              child: MediaQuery(
+                data: data.copyWith(
+                  textScaleFactor: frameScale,
+                ),
+                child: Stack(
+                  children: [
+                    const _SlideBackground(),
+                    _child,
+                    const _SlideFooter(),
+                  ],
+                ),
               ),
             );
           },
@@ -100,18 +102,15 @@ final class _SlideBackground extends StatelessWidget {
 }
 
 final class _SlideFooter extends StatelessWidget {
-  const _SlideFooter({
-    required double frameScale,
-  }) : _frameScale = frameScale;
-
-  final double _frameScale;
+  const _SlideFooter();
 
   @override
   Widget build(BuildContext context) {
     final textStyle = Theme.of(context).textTheme.labelSmall;
 
-    final iconSize = 20 * _frameScale;
-    final paddingBetweenIconAndText = 4 * _frameScale;
+    final frameScale = context.frameScale;
+    final iconSize = 20 * frameScale;
+    final paddingBetweenIconAndText = 4 * frameScale;
     final flutterKaigiLogo = Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -129,7 +128,7 @@ final class _SlideFooter extends StatelessWidget {
       ],
     );
 
-    final framePadding = 12 * _frameScale;
+    final framePadding = 12 * frameScale;
     return Align(
       alignment: Alignment.bottomCenter,
       child: Padding(
