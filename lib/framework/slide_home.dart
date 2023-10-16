@@ -68,6 +68,7 @@ final class _SlideFrame extends StatelessWidget {
                     const _SlideBackground(),
                     _child,
                     const _SlideFooter(),
+                    const _SlideTapArea()
                   ],
                 ),
               ),
@@ -149,6 +150,36 @@ final class _SlideFooter extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+final class _SlideTapArea extends StatelessWidget {
+  const _SlideTapArea();
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: context.framework.previous,
+              onLongPress: context.framework.menu,
+            ),
+          ),
+        ),
+        Expanded(
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: context.framework.next,
+              onLongPress: context.framework.menu,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
