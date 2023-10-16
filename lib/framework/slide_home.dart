@@ -3,6 +3,7 @@ import 'package:custom_fragment_shader/framework/slide_framework.dart';
 import 'package:custom_fragment_shader/framework/slide_intents.dart';
 import 'package:custom_fragment_shader/framework/slide_query.dart';
 import 'package:custom_fragment_shader/gen/assets.gen.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 final class SlideHome extends StatelessWidget {
@@ -159,12 +160,20 @@ final class _SlideTapArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Color hoverColor;
+    if (kIsWeb) {
+      hoverColor = Theme.of(context).hoverColor;
+    } else {
+      hoverColor = Colors.transparent;
+    }
+
     return Row(
       children: [
         Expanded(
           child: Material(
             color: Colors.transparent,
             child: InkWell(
+              hoverColor: hoverColor,
               onTap: context.framework.previous,
               onLongPress: context.framework.menu,
             ),
@@ -174,6 +183,7 @@ final class _SlideTapArea extends StatelessWidget {
           child: Material(
             color: Colors.transparent,
             child: InkWell(
+              hoverColor: hoverColor,
               onTap: context.framework.next,
               onLongPress: context.framework.menu,
             ),
