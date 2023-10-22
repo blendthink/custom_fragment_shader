@@ -1,3 +1,4 @@
+import 'package:custom_fragment_shader/framework/internal/home/slide_menu.dart';
 import 'package:custom_fragment_shader/framework/internal/slide_framework.dart';
 import 'package:custom_fragment_shader/framework/internal/home/slide_home.dart';
 import 'package:custom_fragment_shader/framework/internal/slide_query.dart';
@@ -25,10 +26,18 @@ final class SlideApp extends StatefulWidget {
 class _SlideAppState extends State<SlideApp> {
   late final _router = SlideRouter(slides: widget._slides);
 
+  late MenuValueNotifier _menuValueNotifier;
+
   int _slideNumber = 0;
 
   void _onRouteChange() {
     setState(() => _slideNumber = _router.currentIndex);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _menuValueNotifier = MenuValueNotifier();
   }
 
   @override
@@ -46,6 +55,7 @@ class _SlideAppState extends State<SlideApp> {
   @override
   void dispose() {
     _router.removeListener(_onRouteChange);
+    _menuValueNotifier.dispose();
     super.dispose();
   }
 
@@ -57,6 +67,7 @@ class _SlideAppState extends State<SlideApp> {
       routerConfig: _router.routerConfig,
       builder: (_, child) => SlideFramework(
         router: _router,
+        menuValueNotifier: _menuValueNotifier,
         child: SlideQuery(
           slideNumber: _slideNumber,
           child: SlideHome(

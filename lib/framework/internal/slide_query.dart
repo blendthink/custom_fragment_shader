@@ -6,16 +6,16 @@ enum SlideQueryAspect {
 
 final class SlideQuery extends InheritedModel<SlideQueryAspect> {
   const SlideQuery({
-    required this.slideNumber,
+    required int slideNumber,
     required super.child,
     super.key,
-  });
+  }) : _slideNumber = slideNumber;
 
-  final int slideNumber;
+  final int _slideNumber;
 
   @override
   bool updateShouldNotify(SlideQuery oldWidget) {
-    return slideNumber != oldWidget.slideNumber;
+    return _slideNumber != oldWidget._slideNumber;
   }
 
   @override
@@ -26,7 +26,7 @@ final class SlideQuery extends InheritedModel<SlideQueryAspect> {
     for (final dependency in dependencies) {
       switch (dependency) {
         case SlideQueryAspect.slideNumber:
-          if (slideNumber != oldWidget.slideNumber) {
+          if (_slideNumber != oldWidget._slideNumber) {
             return true;
           }
       }
@@ -39,7 +39,7 @@ final class SlideQuery extends InheritedModel<SlideQueryAspect> {
   }
 
   static int _slideNumberOf(BuildContext context) {
-    return _of(context, SlideQueryAspect.slideNumber).slideNumber;
+    return _of(context, SlideQueryAspect.slideNumber)._slideNumber;
   }
 }
 

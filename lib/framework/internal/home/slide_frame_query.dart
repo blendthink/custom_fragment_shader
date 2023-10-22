@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
 enum SlideFrameQueryAspect {
-  frameScale,
+  frameHeight,
 }
 
 final class SlideFrameQuery extends InheritedModel<SlideFrameQueryAspect> {
   const SlideFrameQuery({
-    required this.frameScale,
+    required double frameHeight,
     required super.child,
     super.key,
-  });
+  }) : _frameHeight = frameHeight;
 
-  final double frameScale;
+  final double _frameHeight;
 
   @override
   bool updateShouldNotify(SlideFrameQuery oldWidget) {
-    return frameScale != oldWidget.frameScale;
+    return _frameHeight != oldWidget._frameHeight;
   }
 
   @override
@@ -25,8 +25,8 @@ final class SlideFrameQuery extends InheritedModel<SlideFrameQueryAspect> {
   ) {
     for (final dependency in dependencies) {
       switch (dependency) {
-        case SlideFrameQueryAspect.frameScale:
-          if (frameScale != oldWidget.frameScale) {
+        case SlideFrameQueryAspect.frameHeight:
+          if (_frameHeight != oldWidget._frameHeight) {
             return true;
           }
       }
@@ -44,11 +44,13 @@ final class SlideFrameQuery extends InheritedModel<SlideFrameQueryAspect> {
     )!;
   }
 
-  static double _frameScaleOf(BuildContext context) {
-    return _of(context, SlideFrameQueryAspect.frameScale).frameScale;
+  static double _frameHeightOf(BuildContext context) {
+    return _of(context, SlideFrameQueryAspect.frameHeight)._frameHeight;
   }
 }
 
 extension SlideFrameQueryX on BuildContext {
-  double get frameScale => SlideFrameQuery._frameScaleOf(this);
+  double get frameScale => SlideFrameQuery._frameHeightOf(this) / 360;
+
+  double get menuHeight => SlideFrameQuery._frameHeightOf(this) / 3;
 }
