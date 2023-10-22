@@ -66,6 +66,13 @@ final class SlideRouter {
     routerConfig.go(slideRoute.path);
   }
 
+  void goToSlide(int index) {
+    if (index < 0 || index >= _slideRoutes.length) return;
+
+    final slideRoute = _slideRoutes[index];
+    routerConfig.go(slideRoute.path);
+  }
+
   int get currentIndex => _slideRoutes.indexWhere(
         (slideRoute) => slideRoute.path == _currentUri.path,
       );

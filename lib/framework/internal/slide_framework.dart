@@ -18,6 +18,8 @@ final class SlideFramework extends InheritedWidget {
 
   void next() => _router.next();
 
+  void goToSlide(int index) => _router.goToSlide(index);
+
   void menu() => menuValueNotifier.toggle();
 
   @override
