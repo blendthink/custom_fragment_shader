@@ -1,16 +1,20 @@
 import 'package:custom_fragment_shader/framework/internal/home/slide_menu.dart';
 import 'package:custom_fragment_shader/framework/internal/slide_router.dart';
+import 'package:custom_fragment_shader/framework/slide_widget.dart';
 import 'package:flutter/material.dart';
 
 final class SlideFramework extends InheritedWidget {
   const SlideFramework({
     required SlideRouter router,
+    required this.slides,
     required this.menuValueNotifier,
     required super.child,
     super.key,
   }) : _router = router;
 
   final SlideRouter _router;
+
+  final List<SlideStatelessWidget> slides;
 
   final MenuValueNotifier menuValueNotifier;
 

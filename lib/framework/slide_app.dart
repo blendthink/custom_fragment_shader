@@ -66,6 +66,7 @@ class _SlideAppState extends State<SlideApp> {
       shortcuts: _shortcuts,
       routerConfig: _router.routerConfig,
       builder: (_, child) => SlideFramework(
+        slides: widget._slides,
         router: _router,
         menuValueNotifier: _menuValueNotifier,
         child: SlideQuery(
