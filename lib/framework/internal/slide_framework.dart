@@ -1,4 +1,4 @@
-import 'package:custom_fragment_shader/framework/slide_router.dart';
+import 'package:custom_fragment_shader/framework/internal/slide_router.dart';
 import 'package:flutter/material.dart';
 
 final class SlideFramework extends InheritedWidget {

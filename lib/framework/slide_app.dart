@@ -1,9 +1,9 @@
-import 'package:custom_fragment_shader/framework/slide_framework.dart';
-import 'package:custom_fragment_shader/framework/slide_home.dart';
-import 'package:custom_fragment_shader/framework/slide_query.dart';
-import 'package:custom_fragment_shader/framework/slide_router.dart';
+import 'package:custom_fragment_shader/framework/internal/slide_framework.dart';
+import 'package:custom_fragment_shader/framework/internal/home/slide_home.dart';
+import 'package:custom_fragment_shader/framework/internal/slide_query.dart';
+import 'package:custom_fragment_shader/framework/internal/slide_router.dart';
 import 'package:custom_fragment_shader/framework/slide_widget.dart';
-import 'package:custom_fragment_shader/framework/slide_intents.dart';
+import 'package:custom_fragment_shader/framework/internal/slide_intents.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

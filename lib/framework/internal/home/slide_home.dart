@@ -1,7 +1,7 @@
-import 'package:custom_fragment_shader/framework/slide_frame_query.dart';
-import 'package:custom_fragment_shader/framework/slide_framework.dart';
-import 'package:custom_fragment_shader/framework/slide_intents.dart';
-import 'package:custom_fragment_shader/framework/slide_query.dart';
+import 'package:custom_fragment_shader/framework/internal/home/slide_frame_query.dart';
+import 'package:custom_fragment_shader/framework/internal/slide_framework.dart';
+import 'package:custom_fragment_shader/framework/internal/slide_intents.dart';
+import 'package:custom_fragment_shader/framework/internal/slide_query.dart';
 import 'package:custom_fragment_shader/gen/assets.gen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
