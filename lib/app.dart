@@ -3,6 +3,7 @@ import 'package:custom_fragment_shader/framework/slide_widget.dart';
 import 'package:custom_fragment_shader/slides/agenda_slide.dart';
 import 'package:custom_fragment_shader/slides/intro_slide.dart';
 import 'package:custom_fragment_shader/slides/outro_slide.dart';
+import 'package:custom_fragment_shader/slides/sample_slide.dart';
 import 'package:custom_fragment_shader/slides/title_slide.dart';
 import 'package:custom_fragment_shader/theme.dart';
 import 'package:flutter/material.dart';
@@ -18,9 +19,17 @@ final class App extends StatelessWidget {
       AgendaSlide(),
       OutroSlide(),
     ];
+
+    final customSlides = [...slides];
+    customSlides.addAll(
+        Iterable<SlideStatelessWidget>.generate(
+          10,
+          (index) => SampleSlide(index),
+        ),
+      );
     return SlideApp(
       theme: appTheme,
-      slides: slides,
+      slides: customSlides,
     );
   }
 }
