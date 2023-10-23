@@ -85,7 +85,6 @@ final class _SlidePreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final data = MediaQuery.of(context);
     final textStyle = Theme.of(context).textTheme.labelMedium;
     final isSelected = index == context.slideNumber;
     return Column(
@@ -96,36 +95,59 @@ final class _SlidePreview extends StatelessWidget {
           style: textStyle,
         ),
         SizedBox(height: 8 * context.frameScale),
-        Material(
-          color: Colors.transparent,
-          child: Ink(
-            height: context.menuHeight / 1.5,
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: isSelected ? Colors.white : Colors.transparent,
-                width: 2 * context.frameScale,
-              ),
+        DecoratedBox(
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: isSelected ? Colors.white : Colors.transparent,
+              width: 2 * context.frameScale,
+              strokeAlign: BorderSide.strokeAlignOutside,
             ),
-            child: InkWell(
-              onTap: onTap,
-              child: AspectRatio(
-                aspectRatio: 16 / 9,
-                child: MediaQuery(
-                  data: data.copyWith(
-                    textScaleFactor: context.frameScale / 4.5,
-                  ),
-                  child: Stack(
-                    children: [
-                      const SlideBackground(),
-                      slide,
-                    ],
-                  ),
-                ),
-              ),
-            ),
+          ),
+          child: _SlidePreviewFrame(
+            slide: slide,
+            onTap: onTap,
           ),
         ),
       ],
+    );
+  }
+}
+
+final class _SlidePreviewFrame extends StatelessWidget {
+  const _SlidePreviewFrame({
+    required SlideStatelessWidget slide,
+    required VoidCallback onTap,
+  })  : _slide = slide,
+        _onTap = onTap;
+
+  final SlideStatelessWidget _slide;
+  final VoidCallback _onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final data = MediaQuery.of(context);
+    return SizedBox(
+      height: context.menuHeight / 1.5,
+      child: AspectRatio(
+        aspectRatio: 16 / 9,
+        child: MediaQuery(
+          data: data.copyWith(
+            textScaleFactor: context.frameScale / 4.5,
+          ),
+          child: Stack(
+            children: [
+              const SlideBackground(),
+              Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: _onTap,
+                  child: _slide,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
