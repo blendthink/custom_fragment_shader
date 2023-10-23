@@ -53,4 +53,8 @@ extension SlideFrameQueryX on BuildContext {
   double get frameScale => SlideFrameQuery._frameHeightOf(this) / 360;
 
   double get menuHeight => SlideFrameQuery._frameHeightOf(this) / 3;
+
+  double get previewScale => frameScale / 4.5;
+
+  double get previewHeight => menuHeight / 1.5;
 }

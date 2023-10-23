@@ -127,12 +127,12 @@ final class _SlidePreviewFrame extends StatelessWidget {
   Widget build(BuildContext context) {
     final data = MediaQuery.of(context);
     return SizedBox(
-      height: context.menuHeight / 1.5,
+      height: context.previewHeight,
       child: AspectRatio(
         aspectRatio: 16 / 9,
         child: MediaQuery(
           data: data.copyWith(
-            textScaleFactor: context.frameScale / 4.5,
+            textScaleFactor: context.previewScale,
           ),
           child: Stack(
             children: [
