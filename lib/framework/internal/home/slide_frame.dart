@@ -1,7 +1,7 @@
 import 'package:custom_fragment_shader/framework/internal/home/slide_background.dart';
 import 'package:custom_fragment_shader/framework/internal/home/slide_footer.dart';
 import 'package:custom_fragment_shader/framework/internal/home/slide_frame_query.dart';
-import 'package:custom_fragment_shader/framework/internal/home/slide_menu.dart';
+import 'package:custom_fragment_shader/framework/internal/home/menu/slide_menu.dart';
 import 'package:custom_fragment_shader/framework/internal/home/slide_tap_area.dart';
 import 'package:flutter/material.dart';
 

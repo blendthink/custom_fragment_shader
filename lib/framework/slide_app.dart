@@ -1,4 +1,4 @@
-import 'package:custom_fragment_shader/framework/internal/home/slide_menu.dart';
+import 'package:custom_fragment_shader/framework/internal/home/menu/slide_menu.dart';
 import 'package:custom_fragment_shader/framework/internal/slide_framework.dart';
 import 'package:custom_fragment_shader/framework/internal/home/slide_home.dart';
 import 'package:custom_fragment_shader/framework/internal/slide_query.dart';

@@ -1,4 +1,4 @@
-import 'package:custom_fragment_shader/framework/internal/home/slide_menu.dart';
+import 'package:custom_fragment_shader/framework/internal/home/menu/slide_menu.dart';
 import 'package:custom_fragment_shader/framework/internal/slide_router.dart';
 import 'package:custom_fragment_shader/framework/slide_widget.dart';
 import 'package:flutter/material.dart';
