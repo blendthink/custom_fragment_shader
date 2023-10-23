@@ -1,8 +1,8 @@
+import 'package:custom_fragment_shader/framework/internal/home/menu/slide_preview_query.dart';
 import 'package:custom_fragment_shader/framework/internal/home/slide_background.dart';
 import 'package:custom_fragment_shader/framework/internal/home/slide_frame_query.dart';
 import 'package:custom_fragment_shader/framework/internal/slide_framework.dart';
 import 'package:custom_fragment_shader/framework/internal/slide_query.dart';
-import 'package:custom_fragment_shader/framework/slide_widget.dart';
 import 'package:flutter/material.dart';
 
 final class SlideMenu extends StatelessWidget {
@@ -59,10 +59,10 @@ final class _SlidePreviews extends StatelessWidget {
         }
         final slideIndex = index - 1;
         final slide = slides[slideIndex];
-        return _SlidePreview(
-          index: slideIndex,
+        return SlidePreviewQuery(
+          slideIndex: slideIndex,
           slide: slide,
-          onTap: () => context.framework.goToSlide(slideIndex),
+          child: const _SlidePreview(),
         );
       },
       separatorBuilder: (context, index) {
@@ -73,25 +73,18 @@ final class _SlidePreviews extends StatelessWidget {
 }
 
 final class _SlidePreview extends StatelessWidget {
-  const _SlidePreview({
-    required this.index,
-    required this.slide,
-    required this.onTap,
-  });
-
-  final int index;
-  final SlideStatelessWidget slide;
-  final VoidCallback onTap;
+  const _SlidePreview();
 
   @override
   Widget build(BuildContext context) {
     final textStyle = Theme.of(context).textTheme.labelMedium;
-    final isSelected = index == context.slideNumber;
+    final slideIndex = context.slideIndex;
+    final isSelected = slideIndex == context.slideNumber;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          '$index',
+          '$slideIndex',
           style: textStyle,
         ),
         SizedBox(height: 8 * context.frameScale),
@@ -103,10 +96,7 @@ final class _SlidePreview extends StatelessWidget {
               strokeAlign: BorderSide.strokeAlignOutside,
             ),
           ),
-          child: _SlidePreviewFrame(
-            slide: slide,
-            onTap: onTap,
-          ),
+          child: const _SlidePreviewFrame(),
         ),
       ],
     );
@@ -114,14 +104,7 @@ final class _SlidePreview extends StatelessWidget {
 }
 
 final class _SlidePreviewFrame extends StatelessWidget {
-  const _SlidePreviewFrame({
-    required SlideStatelessWidget slide,
-    required VoidCallback onTap,
-  })  : _slide = slide,
-        _onTap = onTap;
-
-  final SlideStatelessWidget _slide;
-  final VoidCallback _onTap;
+  const _SlidePreviewFrame();
 
   @override
   Widget build(BuildContext context) {
@@ -140,8 +123,8 @@ final class _SlidePreviewFrame extends StatelessWidget {
               Material(
                 color: Colors.transparent,
                 child: InkWell(
-                  onTap: _onTap,
-                  child: _slide,
+                  onTap: () => context.framework.goToSlide(context.slideIndex),
+                  child: context.slide,
                 ),
               ),
             ],
