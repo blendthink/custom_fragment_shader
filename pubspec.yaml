@@ -23,6 +23,7 @@ dependencies:
       path: plugins/window_size
   flutter_svg: ^2.0.7
   google_fonts: ^6.1.0
+  scroll_to_index: ^3.0.1
 
 dev_dependencies:
   flutter_test:
