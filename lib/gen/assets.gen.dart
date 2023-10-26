@@ -16,9 +16,10 @@ class Assets {
 
   static const SvgGenImage flutterkaigiLogo =
       SvgGenImage('assets/flutterkaigi_logo.svg');
+  static const AssetGenImage speaker = AssetGenImage('assets/speaker.png');
 
   /// List of all assets
-  List<SvgGenImage> get values => [flutterkaigiLogo];
+  List<dynamic> get values => [flutterkaigiLogo, speaker];
 }
 
 class AssetGenImage {
