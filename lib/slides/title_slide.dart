@@ -1,4 +1,6 @@
 import 'package:custom_fragment_shader/framework/slide_widget.dart';
+import 'package:custom_fragment_shader/slides/components/title/title_backgroud.dart';
+import 'package:custom_fragment_shader/slides/components/title/title_body.dart';
 import 'package:flutter/material.dart';
 
 final class TitleSlide extends SlideStatelessWidget {
@@ -6,11 +8,11 @@ final class TitleSlide extends SlideStatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Custom Fragment Shader',
-        style: Theme.of(context).textTheme.displayMedium,
-      ),
+    return const Stack(
+      children: [
+        TitleBackground(),
+        TitleBody(),
+      ],
     );
   }
 }
