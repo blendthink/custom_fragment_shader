@@ -25,6 +25,7 @@ dependencies:
   google_fonts: ^6.1.0
   scroll_to_index: ^3.0.1
   flutter_shaders: ^0.1.2
+  flutter_animate: ^4.2.0+1
 
 dev_dependencies:
   flutter_test:
