@@ -38,6 +38,8 @@ flutter:
   assets:
     - assets/
     - google_fonts/Poppins/
+  shaders:
+    - shaders/title_background.frag
 
 flutter_gen:
   integrations:
