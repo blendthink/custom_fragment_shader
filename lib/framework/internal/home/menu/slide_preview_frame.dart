@@ -27,7 +27,10 @@ final class SlidePreviewFrame extends StatelessWidget {
                   onTap: () => context.framework.goToSlide(context.slideIndex),
                   child: SlideFrameQuery(
                     frameHeight: context.previewHeight,
-                    child: context.slide,
+                    child: SizedBox(
+                      height: context.previewHeight,
+                      child: context.slide,
+                    ),
                   ),
                 ),
               ),
