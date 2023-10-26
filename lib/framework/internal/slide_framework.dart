@@ -22,7 +22,10 @@ final class SlideFramework extends InheritedWidget {
 
   void next() => _router.next();
 
-  void goToSlide(int index) => _router.goToSlide(index);
+  void goToSlide(int index) {
+    _router.goToSlide(index);
+    menuValueNotifier.close();
+  }
 
   void menu() => menuValueNotifier.toggle();
 

@@ -36,4 +36,8 @@ final class MenuValueNotifier extends ValueNotifier<bool> {
   void toggle() {
     value = !value;
   }
+
+  void close() {
+    value = false;
+  }
 }
