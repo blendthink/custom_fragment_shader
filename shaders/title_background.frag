@@ -37,14 +37,14 @@ void main() {
     q.y = fbm(p + vec2(1.0));
 
     vec2 r = vec2(0.0);
-    r.x = fbm(p + 0.5 * q + vec2(1.7, 9.2) + 0.08 * uTime);
-    r.y = fbm(p + 0.05 * q + vec2(8.3, 2.8) + 0.001 * uTime);
+    r.x = fbm(p + 0.5 * q + vec2(1.7, 9.2) + 0.1 * uTime);
+    r.y = fbm(p + 0.05 * q + vec2(8.3, 2.8) + 0.1 * uTime);
 
     float f = fbm(p + r);
 
     vec3 color = mix(vec3(0.0), vec3(0.6, 0, 1), clamp(pow(f, 2), 0.0, 1.0));
     color = mix(color, vec3(0.0), clamp(q.x, 0.0, 1.0));
-    color = mix(color, vec3(0, 0.4, 0.3), clamp(r.x, 0.0, 1.0));
+    color = mix(color, vec3(0, 0.12, 0.1), clamp(r.x, 0.0, 1.0));
     color = (pow(f, 3) + 1.8 * pow(f, 2) + 0.6 * f) * color;
 
     fragColor = vec4(color, 0.5);
