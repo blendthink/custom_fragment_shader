@@ -24,7 +24,7 @@ final class PresentationTitle extends StatelessWidget {
         .animate(onPlay: (controller) => controller.repeat(reverse: true))
         .saturate(delay: 1.seconds, duration: 2.seconds)
         .then()
-        .tint(color: const Color(0xFF80DDFF));
+        .tint(color: const Color(0xFF602678));
 
     return title;
   }
