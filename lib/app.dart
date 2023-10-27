@@ -30,11 +30,11 @@ final class App extends StatelessWidget {
 
     final customSlides = [...slides];
     customSlides.addAll(
-        Iterable<SlideStatelessWidget>.generate(
-          10,
-          (index) => SampleSlide(index),
-        ),
-      );
+      Iterable<SlideStatelessWidget>.generate(
+        10,
+        (index) => SampleSlide(index),
+      ),
+    );
     return SlideApp(
       theme: appTheme,
       slides: customSlides,
