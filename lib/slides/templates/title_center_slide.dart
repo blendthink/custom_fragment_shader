@@ -14,7 +14,7 @@ final class TitleCenterSlide extends StatelessWidget {
     return Center(
       child: Text(
         title,
-        style: theme.textTheme.headlineSmall,
+        style: theme.textTheme.titleLarge,
       ),
     );
   }
