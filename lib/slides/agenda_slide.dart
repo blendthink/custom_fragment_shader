@@ -1,7 +1,7 @@
 import 'package:custom_fragment_shader/components/scaler_gap.dart';
 import 'package:custom_fragment_shader/framework/slide_widget.dart';
-import 'package:custom_fragment_shader/slides/components/agenda/agenda_header.dart';
-import 'package:custom_fragment_shader/slides/components/agenda/agenda_title.dart';
+import 'package:custom_fragment_shader/components/agenda/agenda_header.dart';
+import 'package:custom_fragment_shader/components/agenda/agenda_title.dart';
 import 'package:custom_fragment_shader/slides/data/agenda.dart';
 import 'package:flutter/material.dart';
 

@@ -1,6 +1,6 @@
 import 'package:custom_fragment_shader/framework/slide_widget.dart';
-import 'package:custom_fragment_shader/slides/components/title/title_backgroud.dart';
-import 'package:custom_fragment_shader/slides/components/title/title_body.dart';
+import 'package:custom_fragment_shader/components/title/title_backgroud.dart';
+import 'package:custom_fragment_shader/components/title/title_body.dart';
 import 'package:flutter/material.dart';
 
 final class TitleSlide extends SlideStatelessWidget {

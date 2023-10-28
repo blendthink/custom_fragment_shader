@@ -1,6 +1,6 @@
 import 'package:custom_fragment_shader/components/scaler_gap.dart';
-import 'package:custom_fragment_shader/slides/components/title/presentation_title.dart';
-import 'package:custom_fragment_shader/slides/components/title/speaker_label.dart';
+import 'package:custom_fragment_shader/components/title/presentation_title.dart';
+import 'package:custom_fragment_shader/components/title/speaker_label.dart';
 import 'package:flutter/material.dart';
 
 final class TitleBody extends StatelessWidget {
