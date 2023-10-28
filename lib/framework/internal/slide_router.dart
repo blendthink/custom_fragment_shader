@@ -1,6 +1,11 @@
 import 'package:collection/collection.dart';
+import 'package:custom_fragment_shader/framework/internal/home/slide_home.dart';
 import 'package:custom_fragment_shader/framework/slide_widget.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
+final rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
+final shellNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'shell');
 
 final class SlideRouter {
   SlideRouter({
@@ -31,8 +36,18 @@ final class SlideRouter {
         .toList();
 
     return GoRouter(
+      navigatorKey: rootNavigatorKey,
       initialLocation: routes.first.path,
-      routes: routes,
+      routes: [
+        ShellRoute(
+          navigatorKey: shellNavigatorKey,
+          parentNavigatorKey: rootNavigatorKey,
+          routes: routes,
+          builder: (_, __, child) => SlideHome(
+            child: child,
+          ),
+        ),
+      ],
     );
   }
 

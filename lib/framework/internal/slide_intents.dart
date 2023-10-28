@@ -11,3 +11,7 @@ final class NextIntent extends Intent {
 final class MenuIntent extends Intent {
   const MenuIntent();
 }
+
+final class LicenseIntent extends Intent {
+  const LicenseIntent();
+}

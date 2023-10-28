@@ -27,6 +27,12 @@ final class SlideHome extends StatelessWidget {
             MenuIntent: CallbackAction<MenuIntent>(
               onInvoke: (_) => context.framework.menu(),
             ),
+            LicenseIntent: CallbackAction<LicenseIntent>(
+              onInvoke: (_) => showLicensePage(
+                context: context,
+                applicationName: 'Custom Fragment Shader',
+              ),
+            ),
           },
           child: SlideFrame(
             child: _child,

@@ -1,6 +1,5 @@
 import 'package:custom_fragment_shader/framework/internal/home/menu/slide_menu.dart';
 import 'package:custom_fragment_shader/framework/internal/slide_framework.dart';
-import 'package:custom_fragment_shader/framework/internal/home/slide_home.dart';
 import 'package:custom_fragment_shader/framework/internal/slide_query.dart';
 import 'package:custom_fragment_shader/framework/internal/slide_router.dart';
 import 'package:custom_fragment_shader/framework/slide_widget.dart';
@@ -72,9 +71,7 @@ class _SlideAppState extends State<SlideApp> {
         menuValueNotifier: _menuValueNotifier,
         child: SlideQuery(
           slideNumber: _slideNumber,
-          child: SlideHome(
-            child: child!,
-          ),
+          child: child!,
         ),
       ),
     );
@@ -85,4 +82,5 @@ const _shortcuts = <ShortcutActivator, Intent>{
   SingleActivator(LogicalKeyboardKey.arrowLeft): BackIntent(),
   SingleActivator(LogicalKeyboardKey.arrowRight): NextIntent(),
   SingleActivator(LogicalKeyboardKey.period): MenuIntent(),
+  SingleActivator(LogicalKeyboardKey.keyL): LicenseIntent(),
 };
