@@ -112,11 +112,35 @@ class Assets {
 
   static const SvgGenImage flutterkaigiLogo =
       SvgGenImage('assets/flutterkaigi_logo.svg');
+  static const AssetGenImage pipeline01 =
+      AssetGenImage('assets/pipeline01.png');
+  static const AssetGenImage pipeline02 =
+      AssetGenImage('assets/pipeline02.png');
+  static const AssetGenImage pipeline03 =
+      AssetGenImage('assets/pipeline03.png');
+  static const AssetGenImage pipeline04 =
+      AssetGenImage('assets/pipeline04.png');
+  static const AssetGenImage pipeline05 =
+      AssetGenImage('assets/pipeline05.png');
+  static const AssetGenImage pipeline06 =
+      AssetGenImage('assets/pipeline06.png');
+  static const AssetGenImage pipeline07 =
+      AssetGenImage('assets/pipeline07.png');
   static const AssetGenImage speaker = AssetGenImage('assets/speaker.png');
   static const $GoogleFontsGen googleFonts = $GoogleFontsGen();
 
   /// List of all assets
-  List<dynamic> get values => [flutterkaigiLogo, speaker];
+  List<dynamic> get values => [
+        flutterkaigiLogo,
+        pipeline01,
+        pipeline02,
+        pipeline03,
+        pipeline04,
+        pipeline05,
+        pipeline06,
+        pipeline07,
+        speaker
+      ];
 }
 
 class AssetGenImage {
