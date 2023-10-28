@@ -29,7 +29,7 @@ final class Agenda01PipelineSlide extends SlideStatelessWidget {
         const ScalerGap(24),
         Text(
           'The Rendering Pipeline',
-          style: Theme.of(context).textTheme.titleMedium,
+          style: theme.textTheme.titleMedium,
         ),
         const ScalerGap(36),
         Expanded(
