@@ -1,21 +1,9 @@
 import 'package:custom_fragment_shader/components/agenda01/rendering_pipelines.dart';
 import 'package:custom_fragment_shader/components/scaler_gap.dart';
-import 'package:custom_fragment_shader/framework/internal/home/slide_frame_query.dart';
 import 'package:custom_fragment_shader/framework/slide_widget.dart';
 import 'package:custom_fragment_shader/data/agenda.dart';
-import 'package:custom_fragment_shader/gen/assets.gen.dart';
 import 'package:custom_fragment_shader/templates/title_header_slide.dart';
 import 'package:flutter/material.dart';
-
-const _pipelines = <(AssetGenImage, String)>[
-  (Assets.pipeline01, 'Vertices'),
-  (Assets.pipeline02, 'VerTex\nShader'),
-  (Assets.pipeline03, 'Primitives\nGeneration'),
-  (Assets.pipeline04, 'Rasterization'),
-  (Assets.pipeline05, 'Fragment\nShader'),
-  (Assets.pipeline06, 'Testing\nBlending'),
-  (Assets.pipeline07, 'Framebuffer'),
-];
 
 final class Agenda01PipelineSlide extends SlideStatelessWidget {
   const Agenda01PipelineSlide({super.key});
