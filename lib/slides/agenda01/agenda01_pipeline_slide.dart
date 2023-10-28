@@ -1,3 +1,4 @@
+import 'package:custom_fragment_shader/components/agenda01/rendering_pipelines.dart';
 import 'package:custom_fragment_shader/components/scaler_gap.dart';
 import 'package:custom_fragment_shader/framework/internal/home/slide_frame_query.dart';
 import 'package:custom_fragment_shader/framework/slide_widget.dart';
@@ -22,8 +23,6 @@ final class Agenda01PipelineSlide extends SlideStatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final textTheme = theme.textTheme;
-    final frameScale = context.frameScale;
     final body = Column(
       children: [
         const ScalerGap(24),
@@ -32,51 +31,7 @@ final class Agenda01PipelineSlide extends SlideStatelessWidget {
           style: theme.textTheme.titleMedium,
         ),
         const ScalerGap(36),
-        Expanded(
-          child: Align(
-            alignment: Alignment.center,
-            child: ListView.separated(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                final (assetImage, text) = _pipelines[index];
-                return Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    assetImage.image(
-                      width: 68 * frameScale,
-                      fit: BoxFit.fitWidth,
-                    ),
-                    const ScalerGap(12),
-                    Text(
-                      text,
-                      style: textTheme.labelSmall?.copyWith(
-                        fontSize: textTheme.labelSmall!.fontSize! * 0.8,
-                      ),
-                    ),
-                  ],
-                );
-              },
-              separatorBuilder: (context, index) {
-                return Column(
-                  children: [
-                    const ScalerGap(32),
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 2 * frameScale,
-                      ),
-                      child: Icon(
-                        Icons.keyboard_arrow_right,
-                        size: 16 * frameScale,
-                      ),
-                    ),
-                  ],
-                );
-              },
-              itemCount: _pipelines.length,
-            ),
-          ),
-        ),
+        const RenderingPipelines(),
       ],
     );
 
