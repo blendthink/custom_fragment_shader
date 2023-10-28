@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final appTheme = _baseTheme.copyWith(
+  dividerTheme: _baseTheme.dividerTheme.copyWith(
+    color: _appColorScheme.outline,
+  ),
   textTheme: GoogleFonts.poppinsTextTheme(
     _baseTheme.textTheme,
   ).apply(
