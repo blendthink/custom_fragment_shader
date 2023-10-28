@@ -1,6 +1,6 @@
 # Custom Fragment Shader
 
-![screenshot](assets/screenshot.png)
+![screenshot](docs/screenshot.png)
 
 ## 概要
 

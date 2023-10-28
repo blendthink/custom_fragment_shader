@@ -112,13 +112,11 @@ class Assets {
 
   static const SvgGenImage flutterkaigiLogo =
       SvgGenImage('assets/flutterkaigi_logo.svg');
-  static const AssetGenImage screenshot =
-      AssetGenImage('assets/screenshot.png');
   static const AssetGenImage speaker = AssetGenImage('assets/speaker.png');
   static const $GoogleFontsGen googleFonts = $GoogleFontsGen();
 
   /// List of all assets
-  List<dynamic> get values => [flutterkaigiLogo, screenshot, speaker];
+  List<dynamic> get values => [flutterkaigiLogo, speaker];
 }
 
 class AssetGenImage {
