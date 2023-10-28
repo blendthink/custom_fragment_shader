@@ -18,7 +18,9 @@ final class TitleHeaderSlide extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _Header(_title),
-        const Divider(),
+        Divider(
+          thickness: 0.5 * context.frameScale,
+        ),
         Expanded(
           child: _body,
         ),
