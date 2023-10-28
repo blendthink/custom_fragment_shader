@@ -19,6 +19,7 @@ final class TitleHeaderSlide extends StatelessWidget {
       children: [
         _Header(_title),
         Divider(
+          height: 8 * context.frameScale,
           thickness: 0.5 * context.frameScale,
         ),
         Expanded(
