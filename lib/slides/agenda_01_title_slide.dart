@@ -10,4 +10,8 @@ final class Agenda01TitleSlide extends SlideStatelessWidget {
   Widget build(BuildContext context) {
     return const TitleCenterSlide(Agenda.agenda01);
   }
+
+  @override
+  String get speakerNote => '''
+それでは、はじめに Fragment Shader とは何なのかについて見ていきます。''';
 }

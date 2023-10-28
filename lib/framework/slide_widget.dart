@@ -9,4 +9,6 @@ abstract base class SlideStatelessWidget extends StatelessWidget {
         restorationId: state.pageKey.value,
         child: this,
       );
+
+  String get speakerNote => '';
 }

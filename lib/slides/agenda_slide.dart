@@ -29,4 +29,12 @@ final class AgendaSlide extends SlideStatelessWidget {
       ],
     );
   }
+
+  @override
+  String get speakerNote => '''
+本日のアジェンダはご覧のとおりです。
+まずはじめに、Fragment Shader とは何なのかについて見ていきます。
+その後、Flutter で Fragment Shader が実行されるまでの仕組みを説明します。
+そして、実際に Flutter で Fragment Shader を実装する方法を説明します。
+最後に、より具体的な実装例とその解説をいくつかしていきます。''';
 }
