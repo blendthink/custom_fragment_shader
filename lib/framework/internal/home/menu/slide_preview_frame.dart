@@ -28,6 +28,7 @@ final class SlidePreviewFrame extends StatelessWidget {
                   child: SlideFrameQuery(
                     frameHeight: context.previewHeight,
                     child: SizedBox(
+                      width: double.infinity,
                       height: context.previewHeight,
                       child: context.slide,
                     ),
