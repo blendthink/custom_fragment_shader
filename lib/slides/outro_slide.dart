@@ -31,5 +31,8 @@ final class OutroSlide extends SlideStatelessWidget {
   }
 
   @override
-  String get speakerNote => 'これで発表を終わります。ご清聴ありがとうございました。';
+  String get speakerNote => '''
+これで発表を終わります。
+資料は GitHub にアップしていますので、興味ある方はこちらの QR コードを読み取っていただければと思います。
+ご清聴ありがとうございました。''';
 }
