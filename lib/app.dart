@@ -1,9 +1,9 @@
 import 'package:custom_fragment_shader/framework/slide_app.dart';
 import 'package:custom_fragment_shader/framework/slide_widget.dart';
-import 'package:custom_fragment_shader/slides/agenda_01_title_slide.dart';
-import 'package:custom_fragment_shader/slides/agenda_02_title_slide.dart';
-import 'package:custom_fragment_shader/slides/agenda_03_title_slide.dart';
-import 'package:custom_fragment_shader/slides/agenda_04_title_slide.dart';
+import 'package:custom_fragment_shader/slides/agenda01_title_slide.dart';
+import 'package:custom_fragment_shader/slides/agenda02_title_slide.dart';
+import 'package:custom_fragment_shader/slides/agenda03_title_slide.dart';
+import 'package:custom_fragment_shader/slides/agenda04_title_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda_slide.dart';
 import 'package:custom_fragment_shader/slides/intro_slide.dart';
 import 'package:custom_fragment_shader/slides/outro_slide.dart';
