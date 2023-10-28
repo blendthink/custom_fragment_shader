@@ -1,16 +1,24 @@
-# custom_fragment_shader
+# Custom Fragment Shader
 
-A new Flutter project.
+![screenshot](assets/screenshot.png)
 
-## Getting Started
+## 概要
 
-This project is a starting point for a Flutter application.
+Flutter で高度なグラフィックスを実現するために、これまでは RenderObject や CustomPainter を利用していました。
+しかし、これらは CPU 上で多くの処理を実行することになってしまうため、柔軟性や表現力にどうしても限界がありました。
 
-A few resources to get you started if this is your first Flutter project:
+Flutter 2.8 で Fragment Shader を利用可能になり、GPU 上で処理を実行できるようになったため、より柔軟で高度なグラフィックスを実現できるようになりました。
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+このプロジェクトでは、Fragment Shader の基礎から Flutter での具体的な実装例についてご紹介します。
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## トピック
+
+- Fragment Shader とは
+- Flutter で Fragment Shader が実行されるまでの仕組み
+- Flutter における Fragment Shader の実装方法
+- Fragment Shader の実装例と解説
+    - Pixelate
+    - Ink Sparkle
+    - Hologram Effect
+    - Transition Animation
+
