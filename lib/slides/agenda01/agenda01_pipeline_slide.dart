@@ -13,7 +13,7 @@ const _pipelines = <(AssetGenImage, String)>[
   (Assets.pipeline04, 'Rasterization'),
   (Assets.pipeline05, 'Fragment\nShader'),
   (Assets.pipeline06, 'Testing\nBlending'),
-  (Assets.pipeline07, 'Final\nRender'),
+  (Assets.pipeline07, 'Framebuffer'),
 ];
 
 final class Agenda01PipelineSlide extends SlideStatelessWidget {
@@ -96,6 +96,6 @@ Primitives Generation: このステップで、頂点はプリミティブ（例
 Rasterization: プリミティブはピクセルに変換される過程です。これにより、画面上のどのピクセルがプリミティブに影響されるかが決まります。
 Fragment Shader: 各ピクセル（またはフラグメント）の最終的な色や他の属性を計算します。
 Testing Blending: このステップでは、深度テスト（どのピクセルが前面に表示されるか）やブレンディング（半透明などの効果）が行われます。
-Final Render: 最後に、計算されたピクセルがフレームバッファに書き込まれ、ディスプレイに表示されます。
+Framebuffer: 最後に、計算されたピクセルがフレームバッファに書き込まれ、ディスプレイに表示されます。
 ''';
 }
