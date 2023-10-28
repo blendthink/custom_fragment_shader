@@ -29,4 +29,7 @@ final class OutroSlide extends SlideStatelessWidget {
       ],
     );
   }
+
+  @override
+  String get speakerNote => 'これで発表を終わります。ご清聴ありがとうございました。';
 }
