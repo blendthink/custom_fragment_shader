@@ -1,6 +1,6 @@
 import 'package:custom_fragment_shader/framework/slide_widget.dart';
 import 'package:custom_fragment_shader/data/agenda.dart';
-import 'package:custom_fragment_shader/slides/templates/title_center_slide.dart';
+import 'package:custom_fragment_shader/templates/title_center_slide.dart';
 import 'package:flutter/material.dart';
 
 final class Agenda01TitleSlide extends SlideStatelessWidget {
