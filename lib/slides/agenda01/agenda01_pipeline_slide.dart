@@ -1,4 +1,5 @@
 import 'package:custom_fragment_shader/components/agenda01/rendering_pipelines.dart';
+import 'package:custom_fragment_shader/components/reference.dart';
 import 'package:custom_fragment_shader/components/scaler_gap.dart';
 import 'package:custom_fragment_shader/framework/slide_widget.dart';
 import 'package:custom_fragment_shader/data/agenda.dart';
@@ -20,6 +21,8 @@ final class Agenda01PipelineSlide extends SlideStatelessWidget {
         ),
         const ScalerGap(36),
         const RenderingPipelines(),
+        const ScalerGap(36),
+        const Reference('https://glumpy.github.io/modern-gl.html'),
       ],
     );
 
