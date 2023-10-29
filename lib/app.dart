@@ -1,5 +1,6 @@
 import 'package:custom_fragment_shader/framework/slide_app.dart';
 import 'package:custom_fragment_shader/framework/slide_widget.dart';
+import 'package:custom_fragment_shader/slides/agenda01/agenda01_pipeline_highlight_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda01/agenda01_pipeline_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda01/agenda01_title_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda02/agenda02_title_slide.dart';
@@ -24,6 +25,7 @@ final class App extends StatelessWidget {
       AgendaSlide(),
       Agenda01TitleSlide(),
       Agenda01PipelineSlide(),
+      Agenda01PipelineHighlightSlide(),
       Agenda02TitleSlide(),
       Agenda03TitleSlide(),
       Agenda04TitleSlide(),
