@@ -71,12 +71,16 @@ class $AssetsAgenda01Gen {
 class $AssetsAgenda02Gen {
   const $AssetsAgenda02Gen();
 
+  /// File path: assets/agenda02/document.png
+  AssetGenImage get document =>
+      const AssetGenImage('assets/agenda02/document.png');
+
   /// File path: assets/agenda02/youtube.png
   AssetGenImage get youtube =>
       const AssetGenImage('assets/agenda02/youtube.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [youtube];
+  List<AssetGenImage> get values => [document, youtube];
 }
 
 class $GoogleFontsPoppinsGen {
