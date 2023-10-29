@@ -7,7 +7,7 @@ typedef _Pipeline = (AssetGenImage, String);
 
 const _pipelines = <_Pipeline>[
   (Assets.pipeline01, 'Vertices'),
-  (Assets.pipeline02, 'VerTex\nShader'),
+  (Assets.pipeline02, 'Vertex\nShader'),
   (Assets.pipeline03, 'Primitives\nGeneration'),
   (Assets.pipeline04, 'Rasterization'),
   (Assets.pipeline05, 'Fragment\nShader'),
