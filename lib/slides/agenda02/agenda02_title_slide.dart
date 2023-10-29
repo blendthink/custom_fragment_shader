@@ -10,4 +10,8 @@ final class Agenda02TitleSlide extends SlideStatelessWidget {
   Widget build(BuildContext context) {
     return const TitleCenterSlide(Agenda.agenda02);
   }
+
+  @override
+  String get speakerNote => '''
+では、次に Flutter における Fragment Shader の実装方法を紹介いたします。''';
 }
