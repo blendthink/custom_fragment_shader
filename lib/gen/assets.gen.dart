@@ -68,6 +68,17 @@ class $AssetsAgenda01Gen {
       ];
 }
 
+class $AssetsAgenda02Gen {
+  const $AssetsAgenda02Gen();
+
+  /// File path: assets/agenda02/youtube.png
+  AssetGenImage get youtube =>
+      const AssetGenImage('assets/agenda02/youtube.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [youtube];
+}
+
 class $GoogleFontsPoppinsGen {
   const $GoogleFontsPoppinsGen();
 
@@ -162,6 +173,7 @@ class Assets {
   Assets._();
 
   static const $AssetsAgenda01Gen agenda01 = $AssetsAgenda01Gen();
+  static const $AssetsAgenda02Gen agenda02 = $AssetsAgenda02Gen();
   static const SvgGenImage flutterkaigiLogo =
       SvgGenImage('assets/flutterkaigi_logo.svg');
   static const AssetGenImage speaker = AssetGenImage('assets/speaker.png');
