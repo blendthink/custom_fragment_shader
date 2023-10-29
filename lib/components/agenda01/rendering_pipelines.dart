@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 
 typedef _Pipeline = (AssetGenImage, String);
 
-const _pipelines = <_Pipeline>[
-  (Assets.pipeline01, 'Vertices'),
-  (Assets.pipeline02, 'Vertex\nShader'),
-  (Assets.pipeline03, 'Primitives\nGeneration'),
-  (Assets.pipeline04, 'Rasterization'),
-  (Assets.pipeline05, 'Fragment\nShader'),
-  (Assets.pipeline06, 'Testing\nBlending'),
-  (Assets.pipeline07, 'Framebuffer'),
+final _pipelines = <_Pipeline>[
+  (Assets.agenda01.pipeline01, 'Vertices'),
+  (Assets.agenda01.pipeline02, 'Vertex\nShader'),
+  (Assets.agenda01.pipeline03, 'Primitives\nGeneration'),
+  (Assets.agenda01.pipeline04, 'Rasterization'),
+  (Assets.agenda01.pipeline05, 'Fragment\nShader'),
+  (Assets.agenda01.pipeline06, 'Testing\nBlending'),
+  (Assets.agenda01.pipeline07, 'Framebuffer'),
 ];
 
 final class RenderingPipelines extends StatelessWidget {
@@ -65,7 +65,7 @@ final class _RenderingPipeline extends StatelessWidget {
     final frameScale = context.frameScale;
     final (assetImage, text) = _pipeline;
 
-    final isFragmentShader = assetImage == Assets.pipeline05;
+    final isFragmentShader = assetImage == Assets.agenda01.pipeline05;
     final shouldHighlight = _isHighlight && isFragmentShader;
 
     return DecoratedBox(

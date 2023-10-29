@@ -17,6 +17,49 @@ class $GoogleFontsGen {
   $GoogleFontsPoppinsGen get poppins => const $GoogleFontsPoppinsGen();
 }
 
+class $AssetsAgenda01Gen {
+  const $AssetsAgenda01Gen();
+
+  /// File path: assets/agenda01/pipeline01.png
+  AssetGenImage get pipeline01 =>
+      const AssetGenImage('assets/agenda01/pipeline01.png');
+
+  /// File path: assets/agenda01/pipeline02.png
+  AssetGenImage get pipeline02 =>
+      const AssetGenImage('assets/agenda01/pipeline02.png');
+
+  /// File path: assets/agenda01/pipeline03.png
+  AssetGenImage get pipeline03 =>
+      const AssetGenImage('assets/agenda01/pipeline03.png');
+
+  /// File path: assets/agenda01/pipeline04.png
+  AssetGenImage get pipeline04 =>
+      const AssetGenImage('assets/agenda01/pipeline04.png');
+
+  /// File path: assets/agenda01/pipeline05.png
+  AssetGenImage get pipeline05 =>
+      const AssetGenImage('assets/agenda01/pipeline05.png');
+
+  /// File path: assets/agenda01/pipeline06.png
+  AssetGenImage get pipeline06 =>
+      const AssetGenImage('assets/agenda01/pipeline06.png');
+
+  /// File path: assets/agenda01/pipeline07.png
+  AssetGenImage get pipeline07 =>
+      const AssetGenImage('assets/agenda01/pipeline07.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        pipeline01,
+        pipeline02,
+        pipeline03,
+        pipeline04,
+        pipeline05,
+        pipeline06,
+        pipeline07
+      ];
+}
+
 class $GoogleFontsPoppinsGen {
   const $GoogleFontsPoppinsGen();
 
@@ -110,37 +153,14 @@ class $GoogleFontsPoppinsGen {
 class Assets {
   Assets._();
 
+  static const $AssetsAgenda01Gen agenda01 = $AssetsAgenda01Gen();
   static const SvgGenImage flutterkaigiLogo =
       SvgGenImage('assets/flutterkaigi_logo.svg');
-  static const AssetGenImage pipeline01 =
-      AssetGenImage('assets/pipeline01.png');
-  static const AssetGenImage pipeline02 =
-      AssetGenImage('assets/pipeline02.png');
-  static const AssetGenImage pipeline03 =
-      AssetGenImage('assets/pipeline03.png');
-  static const AssetGenImage pipeline04 =
-      AssetGenImage('assets/pipeline04.png');
-  static const AssetGenImage pipeline05 =
-      AssetGenImage('assets/pipeline05.png');
-  static const AssetGenImage pipeline06 =
-      AssetGenImage('assets/pipeline06.png');
-  static const AssetGenImage pipeline07 =
-      AssetGenImage('assets/pipeline07.png');
   static const AssetGenImage speaker = AssetGenImage('assets/speaker.png');
   static const $GoogleFontsGen googleFonts = $GoogleFontsGen();
 
   /// List of all assets
-  List<dynamic> get values => [
-        flutterkaigiLogo,
-        pipeline01,
-        pipeline02,
-        pipeline03,
-        pipeline04,
-        pipeline05,
-        pipeline06,
-        pipeline07,
-        speaker
-      ];
+  List<dynamic> get values => [flutterkaigiLogo, speaker];
 }
 
 class AssetGenImage {
