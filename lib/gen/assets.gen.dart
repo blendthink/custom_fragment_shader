@@ -20,6 +20,12 @@ class $GoogleFontsGen {
 class $AssetsAgenda01Gen {
   const $AssetsAgenda01Gen();
 
+  /// File path: assets/agenda01/cpu.png
+  AssetGenImage get cpu => const AssetGenImage('assets/agenda01/cpu.png');
+
+  /// File path: assets/agenda01/gup.png
+  AssetGenImage get gup => const AssetGenImage('assets/agenda01/gup.png');
+
   /// File path: assets/agenda01/pipeline01.png
   AssetGenImage get pipeline01 =>
       const AssetGenImage('assets/agenda01/pipeline01.png');
@@ -50,6 +56,8 @@ class $AssetsAgenda01Gen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        cpu,
+        gup,
         pipeline01,
         pipeline02,
         pipeline03,
