@@ -16,7 +16,12 @@ const _pipelines = <_Pipeline>[
 ];
 
 final class RenderingPipelines extends StatelessWidget {
-  const RenderingPipelines({super.key});
+  const RenderingPipelines({
+    required bool isHighlight,
+    super.key,
+  }) : _isHighlight = isHighlight;
+
+  final bool _isHighlight;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +30,12 @@ final class RenderingPipelines extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ..._pipelines
-            .map((pipeline) => _RenderingPipeline(pipeline))
+            .map(
+              (pipeline) => _RenderingPipeline(
+                pipeline: pipeline,
+                isHighlight: _isHighlight,
+              ),
+            )
             .expand(
               (pipeline) => [
                 pipeline,
@@ -39,8 +49,13 @@ final class RenderingPipelines extends StatelessWidget {
 }
 
 final class _RenderingPipeline extends StatelessWidget {
-  const _RenderingPipeline(this._pipeline);
+  const _RenderingPipeline({
+    required bool isHighlight,
+    required _Pipeline pipeline,
+  })  : _isHighlight = isHighlight,
+        _pipeline = pipeline;
 
+  final bool _isHighlight;
   final _Pipeline _pipeline;
 
   @override
@@ -49,21 +64,34 @@ final class _RenderingPipeline extends StatelessWidget {
     final textStyle = theme.textTheme.labelSmall;
     final frameScale = context.frameScale;
     final (assetImage, text) = _pipeline;
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        assetImage.image(
-          height: 82 * frameScale,
-          fit: BoxFit.fitHeight,
+
+    final isFragmentShader = assetImage == Assets.pipeline05;
+    final shouldHighlight = _isHighlight && isFragmentShader;
+
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: shouldHighlight ? Colors.pinkAccent : Colors.transparent,
+          width: 4 * context.frameScale,
+          strokeAlign: BorderSide.strokeAlignOutside,
         ),
-        const ScalerGap(12),
-        Text(
-          text,
-          style: textStyle!.copyWith(
-            fontSize: textStyle.fontSize! * 0.8,
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          assetImage.image(
+            height: 82 * frameScale,
+            fit: BoxFit.fitHeight,
           ),
-        ),
-      ],
+          const ScalerGap(12),
+          Text(
+            text,
+            style: textStyle!.copyWith(
+              fontSize: textStyle.fontSize! * 0.8,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

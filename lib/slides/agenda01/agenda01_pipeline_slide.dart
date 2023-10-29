@@ -20,7 +20,9 @@ final class Agenda01PipelineSlide extends SlideStatelessWidget {
           style: theme.textTheme.titleMedium,
         ),
         const ScalerGap(36),
-        const RenderingPipelines(),
+        const RenderingPipelines(
+          isHighlight: false,
+        ),
         const ScalerGap(36),
         const Reference('https://glumpy.github.io/modern-gl.html'),
       ],
