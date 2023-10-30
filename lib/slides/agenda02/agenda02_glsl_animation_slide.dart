@@ -34,9 +34,12 @@ class _State extends State<Agenda02GlslAnimationSlide> {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       Future.delayed(
         const Duration(milliseconds: 500),
-        () => setState(() {
-          _first = false;
-        }),
+        () {
+          if (!mounted) return;
+          setState(() {
+            _first = false;
+          });
+        },
       );
     });
   }
