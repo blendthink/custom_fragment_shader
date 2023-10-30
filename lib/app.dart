@@ -4,6 +4,7 @@ import 'package:custom_fragment_shader/slides/agenda01/agenda01_diff_between_cpu
 import 'package:custom_fragment_shader/slides/agenda01/agenda01_pipeline_highlight_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda01/agenda01_pipeline_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda01/agenda01_title_slide.dart';
+import 'package:custom_fragment_shader/slides/agenda02/agenda02_implementation_flow_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda02/agenda02_official_site_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda02/agenda02_title_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda03/agenda03_title_slide.dart';
@@ -31,6 +32,7 @@ final class App extends StatelessWidget {
       Agenda01DiffBetweenCpuAndGpuSlide(),
       Agenda02TitleSlide(),
       Agenda02OfficialSiteSlide(),
+      Agenda02OImplementationFlowSlide(),
       Agenda03TitleSlide(),
       Agenda04TitleSlide(),
       OutroSlide(),
