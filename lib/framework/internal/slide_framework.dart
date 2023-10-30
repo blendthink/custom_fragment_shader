@@ -14,7 +14,7 @@ final class SlideFramework extends InheritedWidget {
 
   final SlideRouter _router;
 
-  final List<SlideStatelessWidget> slides;
+  final List<SlideWidget> slides;
 
   final MenuValueNotifier menuValueNotifier;
 

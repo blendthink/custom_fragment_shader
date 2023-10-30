@@ -9,10 +9,10 @@ final shellNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'shell');
 
 final class SlideRouter {
   SlideRouter({
-    required List<SlideStatelessWidget> slides,
+    required List<SlideWidget> slides,
   }) : _slides = slides;
 
-  final List<SlideStatelessWidget> _slides;
+  final List<SlideWidget> _slides;
 
   late final List<_SlideRoute> _slideRoutes = _slides
       .mapIndexed(

@@ -10,13 +10,13 @@ import 'package:flutter/services.dart';
 final class SlideApp extends StatefulWidget {
   const SlideApp({
     required ThemeData theme,
-    required List<SlideStatelessWidget> slides,
+    required List<SlideWidget> slides,
     super.key,
   })  : _theme = theme,
         _slides = slides;
 
   final ThemeData _theme;
-  final List<SlideStatelessWidget> _slides;
+  final List<SlideWidget> _slides;
 
   @override
   State<SlideApp> createState() => _SlideAppState();

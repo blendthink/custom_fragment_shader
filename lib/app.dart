@@ -25,7 +25,7 @@ final class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const slides = <SlideStatelessWidget>[
+    const slides = <SlideWidget>[
       TitleSlide(),
       IntroSlide(),
       AgendaSlide(),

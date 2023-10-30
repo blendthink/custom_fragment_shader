@@ -9,7 +9,7 @@ enum SlidePreviewQueryAspect {
 final class SlidePreviewQuery extends InheritedModel<SlidePreviewQueryAspect> {
   const SlidePreviewQuery({
     required int slideIndex,
-    required SlideStatelessWidget slide,
+    required SlideWidget slide,
     required super.child,
     super.key,
   })  : _slide = slide,
@@ -17,7 +17,7 @@ final class SlidePreviewQuery extends InheritedModel<SlidePreviewQueryAspect> {
 
   final int _slideIndex;
 
-  final SlideStatelessWidget _slide;
+  final SlideWidget _slide;
 
   @override
   bool updateShouldNotify(SlidePreviewQuery oldWidget) {
@@ -58,7 +58,7 @@ final class SlidePreviewQuery extends InheritedModel<SlidePreviewQueryAspect> {
     return _of(context, SlidePreviewQueryAspect.slideIndex)._slideIndex;
   }
 
-  static SlideStatelessWidget _slideOf(BuildContext context) {
+  static SlideWidget _slideOf(BuildContext context) {
     return _of(context, SlidePreviewQueryAspect.slide)._slide;
   }
 }
@@ -66,5 +66,5 @@ final class SlidePreviewQuery extends InheritedModel<SlidePreviewQueryAspect> {
 extension SlidePreviewQueryX on BuildContext {
   int get slideIndex => SlidePreviewQuery._slideIndexOf(this);
 
-  SlideStatelessWidget get slide => SlidePreviewQuery._slideOf(this);
+  SlideWidget get slide => SlidePreviewQuery._slideOf(this);
 }
