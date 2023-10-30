@@ -6,8 +6,8 @@ import 'package:custom_fragment_shader/data/agenda.dart';
 import 'package:custom_fragment_shader/templates/title_header_slide.dart';
 import 'package:flutter/material.dart';
 
-final class Agenda02OImplementationFlowStep1Slide extends SlideStatelessWidget {
-  const Agenda02OImplementationFlowStep1Slide({super.key});
+final class Agenda02ImplementationFlowStep1Slide extends SlideStatelessWidget {
+  const Agenda02ImplementationFlowStep1Slide({super.key});
 
   @override
   Widget build(BuildContext context) {
