@@ -15,7 +15,9 @@ final class Agenda02GlslAnimationSlide extends StatefulWidget
   String get speakerNote => '''
 GLSL とは OpenGL Shading Language の略で、
 OpenGL で使用できる Shader 向けのプログラミング言語です。
-ちなみに OpenGL は Open Graphics Library の略です。''';
+ちなみに OpenGL は Open Graphics Library の略です。
+
+それでは早速 Fragment Shader を書いていきましょう。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(
