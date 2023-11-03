@@ -1,3 +1,4 @@
+import 'package:custom_fragment_shader/components/scaler_gap.dart';
 import 'package:custom_fragment_shader/framework/internal/home/slide_frame_query.dart';
 import 'package:flutter/material.dart';
 
@@ -25,6 +26,7 @@ final class TitleHeaderSlide extends StatelessWidget {
         Expanded(
           child: _body,
         ),
+        const ScalerGap(48),
       ],
     );
   }
