@@ -46,6 +46,7 @@ flutter:
     - google_fonts/Poppins/
   shaders:
     - shaders/title_background.frag
+    - shaders/gradient.frag
 
 flutter_gen:
   integrations:
