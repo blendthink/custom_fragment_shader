@@ -9,6 +9,8 @@ import 'package:custom_fragment_shader/slides/agenda02/agenda02_frag02_slide.dar
 import 'package:custom_fragment_shader/slides/agenda02/agenda02_frag03_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda02/agenda02_frag04_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda02/agenda02_frag05_slide.dart';
+import 'package:custom_fragment_shader/slides/agenda02/agenda02_frag06_slide.dart';
+import 'package:custom_fragment_shader/slides/agenda02/agenda02_frag07_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda02/agenda02_glsl_animation_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda02/agenda02_glsl_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda02/agenda02_implementation_flow_slide.dart';
@@ -51,6 +53,8 @@ final class App extends StatelessWidget {
       Agenda02Frag03Slide(),
       Agenda02Frag04Slide(),
       Agenda02Frag05Slide(),
+      Agenda02Frag06Slide(),
+      Agenda02Frag07Slide(),
       Agenda02ImplementationFlowStep2Slide(),
       Agenda02ImplementationFlowStep3Slide(),
       Agenda03TitleSlide(),
