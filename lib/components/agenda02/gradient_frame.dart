@@ -1,4 +1,3 @@
-import 'package:custom_fragment_shader/components/ticker_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_shaders/flutter_shaders.dart';
 
