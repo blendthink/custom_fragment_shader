@@ -741,6 +741,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.0"
+  widget_arrows:
+    dependency: "direct main"
+    description:
+      name: widget_arrows
+      sha256: bbac0e0a309ed75d195747e7f932c43bce55f645f6a657a9e70b2fe8f9f80926
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.6.0"
   win32:
     dependency: transitive
     description:
