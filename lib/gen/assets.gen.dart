@@ -75,12 +75,21 @@ class $AssetsAgenda02Gen {
   AssetGenImage get document =>
       const AssetGenImage('assets/agenda02/document.png');
 
+  /// File path: assets/agenda02/glsl_profiles.png
+  AssetGenImage get glslProfiles =>
+      const AssetGenImage('assets/agenda02/glsl_profiles.png');
+
+  /// File path: assets/agenda02/glsl_versions.png
+  AssetGenImage get glslVersions =>
+      const AssetGenImage('assets/agenda02/glsl_versions.png');
+
   /// File path: assets/agenda02/youtube.png
   AssetGenImage get youtube =>
       const AssetGenImage('assets/agenda02/youtube.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [document, youtube];
+  List<AssetGenImage> get values =>
+      [document, glslProfiles, glslVersions, youtube];
 }
 
 class $GoogleFontsPoppinsGen {
