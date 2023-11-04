@@ -21,7 +21,7 @@ final class Agenda02Frag05Slide extends SlideStatelessWidget {
 
     final codeBlock = HighlightView(
       code: code,
-      fileName: 'shaders/gradient.frag',
+      fileName: 'shaders/orange.frag',
       language: Language.glsl,
       theme: androidStudioTheme,
     );

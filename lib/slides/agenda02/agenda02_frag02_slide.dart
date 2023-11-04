@@ -1,4 +1,4 @@
-import 'package:custom_fragment_shader/components/agenda02/gradient_frame.dart';
+import 'package:custom_fragment_shader/components/agenda02/orange_frame.dart';
 import 'package:custom_fragment_shader/data/agenda.dart';
 import 'package:custom_fragment_shader/framework/highlight/highlight_theme.dart';
 import 'package:custom_fragment_shader/framework/highlight/highlight_view.dart';
@@ -18,7 +18,7 @@ final class Agenda02Frag02Slide extends SlideStatelessWidget {
 
     final codeBlock = HighlightView(
       code: code,
-      fileName: 'shaders/gradient.frag',
+      fileName: 'shaders/orange.frag',
       language: Language.glsl,
       theme: androidStudioTheme,
     );
@@ -35,7 +35,7 @@ final class Agenda02Frag02Slide extends SlideStatelessWidget {
           child: Center(
             child: SizedBox.square(
               dimension: 160 * context.frameScale,
-              child: const GradientFrame(),
+              child: const OrangeFrame(),
             ),
           ),
         ),
@@ -50,8 +50,8 @@ final class Agenda02Frag02Slide extends SlideStatelessWidget {
 
   @override
   String get speakerNote => '''
-２つの色を使ってグラデーションを描画する Fragment Shader を作成するので
-gradient.frag という名前にします。''';
+全てをオレンジ色で描画する Fragment Shader を作成するので
+orange.frag という名前にします。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

@@ -1,5 +1,3 @@
-import 'package:custom_fragment_shader/components/reference.dart';
-import 'package:custom_fragment_shader/components/scaler_gap.dart';
 import 'package:custom_fragment_shader/data/agenda.dart';
 import 'package:custom_fragment_shader/framework/highlight/highlight_theme.dart';
 import 'package:custom_fragment_shader/framework/highlight/highlight_view.dart';
@@ -23,7 +21,7 @@ final class Agenda02Frag07Slide extends SlideStatelessWidget {
 
     final codeBlock = HighlightView(
       code: code,
-      fileName: 'shaders/gradient.frag',
+      fileName: 'shaders/orange.frag',
       language: Language.glsl,
       theme: androidStudioTheme,
     );
