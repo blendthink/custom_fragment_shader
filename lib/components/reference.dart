@@ -12,18 +12,21 @@ final class Reference extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        Text(
-          reference,
-          textAlign: TextAlign.end,
-          style: theme.textTheme.bodySmall?.copyWith(
-            color: theme.colorScheme.secondary,
+    return FittedBox(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          const ScalerGap(16),
+          Text(
+            reference,
+            textAlign: TextAlign.end,
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: theme.colorScheme.secondary,
+            ),
           ),
-        ),
-        const ScalerGap(16),
-      ],
+          const ScalerGap(16),
+        ],
+      ),
     );
   }
 }
