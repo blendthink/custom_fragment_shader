@@ -75,6 +75,10 @@ class $AssetsAgenda02Gen {
   AssetGenImage get document =>
       const AssetGenImage('assets/agenda02/document.png');
 
+  /// File path: assets/agenda02/flutter_shaders.png
+  AssetGenImage get flutterShaders =>
+      const AssetGenImage('assets/agenda02/flutter_shaders.png');
+
   /// File path: assets/agenda02/glsl_profiles.png
   AssetGenImage get glslProfiles =>
       const AssetGenImage('assets/agenda02/glsl_profiles.png');
@@ -89,7 +93,7 @@ class $AssetsAgenda02Gen {
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [document, glslProfiles, glslVersions, youtube];
+      [document, flutterShaders, glslProfiles, glslVersions, youtube];
 }
 
 class $GoogleFontsPoppinsGen {
