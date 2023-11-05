@@ -127,13 +127,17 @@ final class HighlightView extends StatelessWidget {
       decoration: BoxDecoration(
         color: _theme.backgroundColor,
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          fileNameBox,
-          codeBox,
-        ],
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        alignment: Alignment.topLeft,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            fileNameBox,
+            codeBox,
+          ],
+        ),
       ),
     );
   }
