@@ -28,7 +28,7 @@ final class OrangeFrame extends StatelessWidget {
       code: code,
       fileName: 'lib/orange_frame.dart',
       language: Language.dart,
-      theme: androidStudioThemeForYaml,
+      theme: androidStudioTheme,
     );
 
     final body = Row(

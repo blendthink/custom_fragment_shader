@@ -35,7 +35,7 @@ void main() async {
       code: code,
       fileName: 'lib/main.dart',
       language: Language.dart,
-      theme: androidStudioThemeForYaml,
+      theme: androidStudioTheme,
     );
 
     final body = Row(
