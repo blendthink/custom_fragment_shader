@@ -62,7 +62,7 @@ dependencies:
   @override
   String get speakerNote => '''
 次に、公式でも紹介されている flutter_shaders というパッケージを dependencies に追加します。
-このパッケージは  Fragment Shader を取り扱う際に様々な面倒な作業を簡単にできるようにしてくれます。''';
+このパッケージは  Fragment Shader を取り扱う際に、様々な面倒な作業を簡単にできるようにしてくれます。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

@@ -57,8 +57,9 @@ final class OrangeFrame extends StatelessWidget {
 
   @override
   String get speakerNote => '''
-先ほど追加した flutter_shaders パッケージの ShaderBuilder という Widget を使います。
+先ほど追加した flutter_shaders パッケージの ShaderBuilder という Widget を使い
 assetKey に使用する Fragment Shader 用のプログラムファイルを指定するだけです。
+
 これで、アプリ側で Fragment Shader を読み込む部分が実装できました。''';
 
   @override

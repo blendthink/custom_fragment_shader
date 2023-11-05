@@ -62,7 +62,7 @@ final class Agenda02Frag05Slide extends SlideStatelessWidget {
   String get speakerNote => '''
 profile は次の３つから選択します。
 今回は core を選択します。
-使用する GLSL のバージョンによっても選択できる profile が変わりますので、ご注意ください。''';
+使用する GLSL のバージョンによっても、選択できる profile が変わりますので、ご注意ください。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

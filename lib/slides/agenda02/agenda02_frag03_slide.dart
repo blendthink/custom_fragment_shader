@@ -42,7 +42,7 @@ final class Agenda02Frag03Slide extends SlideStatelessWidget {
 
   @override
   String get speakerNote => '''
-ファイルの中身は、はじめに使用する GLSL のバージョンとプロファイルを指定します。''';
+ファイルの中身は、はじめに、使用する GLSL のバージョンとプロファイルを指定します。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(
