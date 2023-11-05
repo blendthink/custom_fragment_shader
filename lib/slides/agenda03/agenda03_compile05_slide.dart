@@ -9,37 +9,39 @@ import 'package:custom_fragment_shader/templates/title_header_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-final class Agenda03Load10Slide extends SlideStatelessWidget {
-  const Agenda03Load10Slide({super.key});
+final class Agenda03Compile05Slide extends SlideStatelessWidget {
+  const Agenda03Compile05Slide({super.key});
 
   @override
   Widget build(BuildContext context) {
     const code = '''
 // ...
-class ShaderCompiler {
-  // ...
-  Future<bool> compileShader({
+class _BuildInstance {
+// ...
+  Future<bool> invokeTarget(Node node) async {
     // ...
-  }) async {
-    final File impellerc = _fs.file(
-      _artifacts.getHostArtifact(HostArtifact.impellerc),
-    );
-    // ...
-    final List<String> cmd = <String>[
-      impellerc.path,
-      target.target,
-      // ...
-    ];
-    final Process impellercProcess = await _processManager.start(cmd);
-    // ...
-    return true;
+    return memoizer.runOnce(() => _invokeInternal(node));
   }
-}
-// ...''';
+  
+  Future<bool> _invokeInternal(Node node) async {
+    // ...
+    try {
+      // ...
+      if (runtimeSkip) {
+        // ...
+      } else {
+        // ...
+        await node.target.build(environment);
+        // ...
+      }
+    }
+    // ...
+  }
+}''';
 
     final codeBlock = HighlightView(
       code: code,
-      fileName: 'lib/src/build_system/targets/shader_compiler.dart',
+      fileName: 'lib/src/build_system/build_system.dart',
       language: Language.dart,
       theme: androidStudioTheme,
     );
@@ -54,7 +56,7 @@ class ShaderCompiler {
         ),
         const ScalerGap(16),
         const Reference(
-          'https://github.com/flutter/flutter/blob/55868ed2a930ce8aa1c046ec9059ca077f807a94/packages/flutter_tools/lib/src/build_system/targets/shader_compiler.dart#L160C31-L160C31',
+          'https://github.com/flutter/flutter/blob/55868ed2a930ce8aa1c046ec9059ca077f807a94/packages/flutter_tools/lib/src/build_system/build_system.dart#L763',
         ),
       ],
     );
@@ -67,10 +69,10 @@ class ShaderCompiler {
 
   @override
   String get speakerNote => '''
-プラットフォームによって異なる impellerc という実行ファイルを取得して、引数を指定して実行していました。
+`_invokeInternal()` メソッドを呼び出していて、最終的に
+`node` に紐づく `target` の `build()` メソッドを呼び出していることが分かります。
 
-これによって、プラットフォームによって、シェーダーが適切にコンパイルされ
-必要なランタイムメタデータを自動的に生成されます。''';
+では、`target` とは何かを確認する必要がありそうです。 `AssembleCommand` に戻って確認してみると''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

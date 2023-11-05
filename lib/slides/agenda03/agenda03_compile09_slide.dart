@@ -9,8 +9,8 @@ import 'package:custom_fragment_shader/templates/title_header_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-final class Agenda03Load09Slide extends SlideStatelessWidget {
-  const Agenda03Load09Slide({super.key});
+final class Agenda03Compile09Slide extends SlideStatelessWidget {
+  const Agenda03Compile09Slide({super.key});
 
   @override
   Widget build(BuildContext context) {

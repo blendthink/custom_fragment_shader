@@ -9,39 +9,25 @@ import 'package:custom_fragment_shader/templates/title_header_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-final class Agenda03Load05Slide extends SlideStatelessWidget {
-  const Agenda03Load05Slide({super.key});
+final class Agenda03Compile07Slide extends SlideStatelessWidget {
+  const Agenda03Compile07Slide({super.key});
 
   @override
   Widget build(BuildContext context) {
     const code = '''
 // ...
-class _BuildInstance {
-// ...
-  Future<bool> invokeTarget(Node node) async {
-    // ...
-    return memoizer.runOnce(() => _invokeInternal(node));
-  }
-  
-  Future<bool> _invokeInternal(Node node) async {
-    // ...
-    try {
-      // ...
-      if (runtimeSkip) {
-        // ...
-      } else {
-        // ...
-        await node.target.build(environment);
-        // ...
-      }
-    }
-    // ...
-  }
-}''';
+List<Target> _kDefaultTargets = <Target>[
+  // ...
+  const DebugMacOSBundleFlutterAssets(),
+  const ProfileMacOSBundleFlutterAssets(),
+  const ReleaseMacOSBundleFlutterAssets(),
+  // ...
+];
+// ...''';
 
     final codeBlock = HighlightView(
       code: code,
-      fileName: 'lib/src/build_system/build_system.dart',
+      fileName: 'lib/src/commands/assemble.dart',
       language: Language.dart,
       theme: androidStudioTheme,
     );
@@ -56,7 +42,7 @@ class _BuildInstance {
         ),
         const ScalerGap(16),
         const Reference(
-          'https://github.com/flutter/flutter/blob/55868ed2a930ce8aa1c046ec9059ca077f807a94/packages/flutter_tools/lib/src/build_system/build_system.dart#L763',
+          'https://github.com/flutter/flutter/blob/55868ed2a930ce8aa1c046ec9059ca077f807a94/packages/flutter_tools/lib/src/commands/assemble.dart#L30',
         ),
       ],
     );
@@ -69,10 +55,10 @@ class _BuildInstance {
 
   @override
   String get speakerNote => '''
-`_invokeInternal()` メソッドを呼び出していて、最終的に
-`node` に紐づく `target` の `build()` メソッドを呼び出していることが分かります。
+様々な `Target` が定義されています。
+その中に `Assets` に関連する名前がついた `Target` がいくつかあります。
 
-では、`target` とは何かを確認する必要がありそうです。 `AssembleCommand` に戻って確認してみると''';
+個人的に MacOS アプリを直近でビルドしていたので、`DebugMacOSBundleFlutterAssets` の中身を確認してみます。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

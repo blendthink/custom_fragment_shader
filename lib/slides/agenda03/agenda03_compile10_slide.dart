@@ -9,34 +9,37 @@ import 'package:custom_fragment_shader/templates/title_header_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-final class Agenda03Load06Slide extends SlideStatelessWidget {
-  const Agenda03Load06Slide({super.key});
+final class Agenda03Compile10Slide extends SlideStatelessWidget {
+  const Agenda03Compile10Slide({super.key});
 
   @override
   Widget build(BuildContext context) {
     const code = '''
 // ...
-class AssembleCommand extends FlutterCommand {
+class ShaderCompiler {
   // ...
-  List<Target> createTargets() {
+  Future<bool> compileShader({
     // ...
-    final Map<String, Target> targetMap = <String, Target>{
-      for (final Target target in _kDefaultTargets)
-        target.name: target,
-    };
-    final List<Target> results = <Target>[
-      for (final String targetName in argumentResults.rest)
-        if (targetMap.containsKey(targetName))
-          targetMap[targetName]!,
+  }) async {
+    final File impellerc = _fs.file(
+      _artifacts.getHostArtifact(HostArtifact.impellerc),
+    );
+    // ...
+    final List<String> cmd = <String>[
+      impellerc.path,
+      target.target,
+      // ...
     ];
+    final Process impellercProcess = await _processManager.start(cmd);
     // ...
-    return results;
+    return true;
   }
-}''';
+}
+// ...''';
 
     final codeBlock = HighlightView(
       code: code,
-      fileName: 'lib/src/commands/assemble.dart',
+      fileName: 'lib/src/build_system/targets/shader_compiler.dart',
       language: Language.dart,
       theme: androidStudioTheme,
     );
@@ -51,7 +54,7 @@ class AssembleCommand extends FlutterCommand {
         ),
         const ScalerGap(16),
         const Reference(
-          'https://github.com/flutter/flutter/blob/55868ed2a930ce8aa1c046ec9059ca077f807a94/packages/flutter_tools/lib/src/commands/assemble.dart#L168',
+          'https://github.com/flutter/flutter/blob/55868ed2a930ce8aa1c046ec9059ca077f807a94/packages/flutter_tools/lib/src/build_system/targets/shader_compiler.dart#L160C31-L160C31',
         ),
       ],
     );
@@ -64,10 +67,10 @@ class AssembleCommand extends FlutterCommand {
 
   @override
   String get speakerNote => '''
-`target` は `createTargets()` で作成されているので、その中身を確認すると
+プラットフォームによって異なる impellerc という実行ファイルを取得して、引数を指定して実行していました。
 
-どうやら、`_kDefaultTargets` という変数から `Target` を作成しているようです。
-`_kDefaultTargets` の中身を確認すると''';
+これによって、プラットフォームによって、シェーダーが適切にコンパイルされ
+必要なランタイムメタデータを自動的に生成されます。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

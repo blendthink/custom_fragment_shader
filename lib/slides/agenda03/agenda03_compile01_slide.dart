@@ -1,5 +1,3 @@
-import 'package:custom_fragment_shader/components/reference.dart';
-import 'package:custom_fragment_shader/components/scaler_gap.dart';
 import 'package:custom_fragment_shader/data/agenda.dart';
 import 'package:custom_fragment_shader/framework/highlight/highlight_theme.dart';
 import 'package:custom_fragment_shader/framework/highlight/highlight_view.dart';
@@ -9,30 +7,26 @@ import 'package:custom_fragment_shader/templates/title_header_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-final class Agenda03Load07Slide extends SlideStatelessWidget {
-  const Agenda03Load07Slide({super.key});
+final class Agenda03Compile01Slide extends SlideStatelessWidget {
+  const Agenda03Compile01Slide({super.key});
 
   @override
   Widget build(BuildContext context) {
     const code = '''
-// ...
-List<Target> _kDefaultTargets = <Target>[
-  // ...
-  const DebugMacOSBundleFlutterAssets(),
-  const ProfileMacOSBundleFlutterAssets(),
-  const ReleaseMacOSBundleFlutterAssets(),
-  // ...
-];
-// ...''';
+# ...
+flutter:
+  # ...
+  shaders:
+    - shaders/orange.frag''';
 
     final codeBlock = HighlightView(
       code: code,
-      fileName: 'lib/src/commands/assemble.dart',
-      language: Language.dart,
-      theme: androidStudioTheme,
+      fileName: 'pubspec.yaml',
+      language: Language.yaml,
+      theme: androidStudioThemeForYaml,
     );
 
-    final body = Column(
+    final body = Row(
       children: [
         Expanded(
           child: SizedBox(
@@ -40,10 +34,7 @@ List<Target> _kDefaultTargets = <Target>[
             child: codeBlock,
           ),
         ),
-        const ScalerGap(16),
-        const Reference(
-          'https://github.com/flutter/flutter/blob/55868ed2a930ce8aa1c046ec9059ca077f807a94/packages/flutter_tools/lib/src/commands/assemble.dart#L30',
-        ),
+        const Expanded(child: Center()),
       ],
     );
 
@@ -55,10 +46,12 @@ List<Target> _kDefaultTargets = <Target>[
 
   @override
   String get speakerNote => '''
-様々な `Target` が定義されています。
-その中に `Assets` に関連する名前がついた `Target` がいくつかあります。
+まずは、pubspec.yaml にこのような設定をすることによって、何が起きるのかをみていきます。
 
-個人的に MacOS アプリを直近でビルドしていたので、`DebugMacOSBundleFlutterAssets` の中身を確認してみます。''';
+Flutter でアプリを実行するときは `flutter run` コマンドを実行しています。
+`flutter run` コマンドを実行すると、基本的には `flutter assemble` コマンドも自動で実行されるようになっています。
+
+この `flutter assemble` コマンドの処理の中身をみていくと、どのようなことが起きているのか分かってきます。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

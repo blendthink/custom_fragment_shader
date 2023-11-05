@@ -9,35 +9,40 @@ import 'package:custom_fragment_shader/templates/title_header_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-final class Agenda03Load02Slide extends SlideStatelessWidget {
-  const Agenda03Load02Slide({super.key});
+final class Agenda03Compile08Slide extends SlideStatelessWidget {
+  const Agenda03Compile08Slide({super.key});
 
   @override
   Widget build(BuildContext context) {
     const code = '''
-// ...
-class AssembleCommand extends FlutterCommand {
+abstract class MacOSBundleFlutterAssets extends Target {
   // ...
   @override
-  Future<FlutterCommandResult> runCommand() async {
-    final List<Target> targets = createTargets();
+  Future<void> build(Environment environment) async {
     // ...
-    final BuildResult result = await _buildSystem.build(
-      target!,
-      _environment,
-      buildSystemConfig: BuildSystemConfig(
-        resourcePoolSize: argumentResults.wasParsed('resource-pool-size')
-          ? int.tryParse(stringArg('resource-pool-size')!)
-          : null,
-      ),
+    final Directory assetDirectory = outputDirectory
+      .childDirectory('Resources')
+      .childDirectory('flutter_assets');
+    assetDirectory.createSync(recursive: true);
+
+    final Depfile assetDepfile = await copyAssets(
+      environment,
+      assetDirectory,
+      targetPlatform: TargetPlatform.darwin,
+      shaderTarget: ShaderTarget.sksl,
     );
     // ...
   }
-}''';
+}
+// ...
+class DebugMacOSBundleFlutterAssets extends MacOSBundleFlutterAssets {
+  // ...
+}
+// ...''';
 
     final codeBlock = HighlightView(
       code: code,
-      fileName: 'lib/src/commands/assemble.dart',
+      fileName: 'lib/src/build_system/targets/macos.dart',
       language: Language.dart,
       theme: androidStudioTheme,
     );
@@ -52,7 +57,7 @@ class AssembleCommand extends FlutterCommand {
         ),
         const ScalerGap(16),
         const Reference(
-          'https://github.com/flutter/flutter/blob/55868ed2a930ce8aa1c046ec9059ca077f807a94/packages/flutter_tools/lib/src/commands/assemble.dart#L278',
+          'https://github.com/flutter/flutter/blob/55868ed2a930ce8aa1c046ec9059ca077f807a94/packages/flutter_tools/lib/src/build_system/targets/macos.dart#L531',
         ),
       ],
     );
@@ -65,10 +70,13 @@ class AssembleCommand extends FlutterCommand {
 
   @override
   String get speakerNote => '''
-中身をみてみると、`assemble` コマンドはまずターゲットと呼ばれるものを作成して
-それらをゴニョゴニョして `BuildSystem` の `build()` メソッドを呼び出していることが分かります。
+`DebugMacOSBundleFlutterAssets` は `MacOSBundleFlutterAssets` を継承していて
+それの `build()` メソッドが呼ばれていました。
 
-`BuildSystem` は何かというと `AssembleCommand` のコンストラクタが呼び出されているところを確認する必要があります。''';
+実装を確認すると、アセット用の出力先のディレクトリを作成して
+`copyAssets()` というメソッドを呼び出していることが分かります。
+
+この `copyAssets()` メソッドの中身を確認してみると''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

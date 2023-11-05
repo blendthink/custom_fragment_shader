@@ -9,28 +9,36 @@ import 'package:custom_fragment_shader/templates/title_header_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-final class Agenda03Load03Slide extends SlideStatelessWidget {
-  const Agenda03Load03Slide({super.key});
+final class Agenda03Compile04Slide extends SlideStatelessWidget {
+  const Agenda03Compile04Slide({super.key});
 
   @override
   Widget build(BuildContext context) {
     const code = '''
 // ...
-import 'src/globals.dart' as globals;
+class FlutterBuildSystem extends BuildSystem {
 // ...
-List<FlutterCommand> generateCommands({
-  required bool verboseHelp,
-  required bool verbose,
-}) => <FlutterCommand>[
-  // ...
-  AssembleCommand(verboseHelp: verboseHelp, buildSystem: globals.buildSystem),
-  // ...
-];
-// ...''';
+  @override
+  Future<BuildResult> build(
+    Target target,
+    Environment environment, {
+    BuildSystemConfig buildSystemConfig = const BuildSystemConfig(),
+  }) async {
+    // ...
+    final Node node = target._toNode(environment);
+    // ...
+    try {
+      passed = await buildInstance.invokeTarget(node);
+    } finally {
+      // ...
+    }
+    // ...
+  }
+}''';
 
     final codeBlock = HighlightView(
       code: code,
-      fileName: 'lib/executable.dart',
+      fileName: 'lib/src/build_system/build_system.dart',
       language: Language.dart,
       theme: androidStudioTheme,
     );
@@ -45,7 +53,7 @@ List<FlutterCommand> generateCommands({
         ),
         const ScalerGap(16),
         const Reference(
-          'https://github.com/flutter/flutter/blob/55868ed2a930ce8aa1c046ec9059ca077f807a94/packages/flutter_tools/lib/executable.dart#L141',
+          'https://github.com/flutter/flutter/blob/55868ed2a930ce8aa1c046ec9059ca077f807a94/packages/flutter_tools/lib/src/build_system/build_system.dart#L577',
         ),
       ],
     );
@@ -58,11 +66,8 @@ List<FlutterCommand> generateCommands({
 
   @override
   String get speakerNote => '''
-確認してみると、`globals` の `buildSystem` が渡されていることが分かります。
-`globals` の `buildSystem` は何かというと `FlutterBuildSystem` というクラスのインスタンスです。
-なぜそうなるかは、時間の関係上省略させていただきます。
-
-では、`FlutterBuildSystem` の `build()` メソッドでは何をしているのかを確認してみましょう。''';
+ざっくり見てみると、target から node を作り出して `buildInstance` の `invokeTarget()` メソッドを呼び出しているようです。
+その中身を確認してみると''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(
