@@ -1,7 +1,10 @@
+import 'package:custom_fragment_shader/components/reference.dart';
+import 'package:custom_fragment_shader/components/scaler_gap.dart';
 import 'package:custom_fragment_shader/data/agenda.dart';
 import 'package:custom_fragment_shader/framework/highlight/highlight_theme.dart';
 import 'package:custom_fragment_shader/framework/highlight/highlight_view.dart';
 import 'package:custom_fragment_shader/framework/highlight/language.dart';
+import 'package:custom_fragment_shader/framework/internal/home/slide_frame_query.dart';
 import 'package:custom_fragment_shader/framework/slide_widget.dart';
 import 'package:custom_fragment_shader/templates/title_header_slide.dart';
 import 'package:flutter/material.dart';
@@ -45,6 +48,21 @@ final class OrangeFrame extends StatelessWidget {
       theme: androidStudioTheme,
     );
 
+    const rightCode = '''
+Offset.zero & size
+
+↓
+
+Rect.fromLTWH(0, 0, size.width, size.height)
+''';
+
+    final rightCodeBlock = HighlightView(
+      code: rightCode,
+      fileName: 'lib/orange_frame.dart',
+      language: Language.dart,
+      theme: androidStudioTheme,
+    );
+
     final body = Row(
       children: [
         Expanded(
@@ -53,7 +71,23 @@ final class OrangeFrame extends StatelessWidget {
             child: codeBlock,
           ),
         ),
-        const Expanded(child: Center()),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.all(16 * context.frameScale),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Flexible(
+                  child: rightCodeBlock,
+                ),
+                const ScalerGap(16),
+                const Reference(
+                  'https://api.flutter.dev/flutter/dart-ui/Offset/operator_bitwise_and.html',
+                ),
+              ],
+            ),
+          ),
+        ),
       ],
     );
 
@@ -70,8 +104,8 @@ canvas には、描画するためのメソッドがいくつか用意されて�
 
 drawRect の第一引数では描画する領域を指定して、第二引数では描画するための Paint を指定します。
 
-Offset.zero & size の意味は、Rect.fromLTWH(0, 0, size.width, size.height) と同じ意味です。
-このように Offset には便利な Operator が用意されているので、& を使って簡単に Rect を作成できます。
+Offset.zero & size の意味は、右のような Rect を作成する処理と同じ意味です。
+このように Offset には便利な Operator が用意されているので、簡単に Rect を作成できます。
 
 Paint には、shader というプロパティがあるので、そこに ShaderBuilder から渡される shader を設定します。
 これで大体アプリで実行する部分の実装は完了です。
