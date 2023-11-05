@@ -51,3 +51,16 @@ const androidStudioTheme = HighlightTheme(
     'strong': TextStyle(fontWeight: FontWeight.bold),
   },
 );
+
+const androidStudioThemeForYaml = HighlightTheme(
+  textColor: Color(0xffa9b7c6),
+  backgroundColor: Color(0xff282b2e),
+  fileNameTextColor: Color(0xffffffff),
+  fileNameBackgroundColor: Color(0x66808080),
+  textStyles: {
+    'attr': TextStyle(color: Color(0xffcc7832)),
+    'meta': TextStyle(color: Color(0xffcc7832)),
+    'comment': TextStyle(color: Color(0xff808080)),
+    'string': TextStyle(color: Color(0xff6A8759)),
+  },
+);
