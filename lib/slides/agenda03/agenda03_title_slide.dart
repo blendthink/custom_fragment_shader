@@ -10,4 +10,10 @@ final class Agenda03TitleSlide extends SlideStatelessWidget {
   Widget build(BuildContext context) {
     return const TitleCenterSlide(Agenda.agenda03);
   }
+
+  @override
+  String get speakerNote => '''
+ここまで Flutter での Fragment Shader の実装方法についてみていきました。
+しかし、実装進める中でいくつか疑問点が出てきたのではないでしょうか。
+それらの疑問点を解消すべく、Fragment Shader が実行されるまでの仕組みをさらにみていきます。''';
 }
