@@ -22,3 +22,14 @@ Flutter 2.8 で Fragment Shader を利用可能になり、GPU 上で処理を�
     - Hologram Effect
     - Transition Animation
 
+## 参考資料
+
+- https://docs.flutter.dev/ui/design/graphics/fragment-shaders
+- https://www.youtube.com/watch?v=OpcPZdfJbq8
+- https://github.com/flutter/flutter
+- https://github.com/flutter/engine
+- https://github.com/google/skia
+- https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview
+- https://www.khronos.org/opengl/wiki/Fragment_Shader
+- https://thebookofshaders.com
+- https://glumpy.github.io/modern-gl.html
