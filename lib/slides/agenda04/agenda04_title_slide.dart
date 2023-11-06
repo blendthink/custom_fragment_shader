@@ -13,6 +13,9 @@ final class Agenda04TitleSlide extends SlideStatelessWidget {
 
   @override
   String get speakerNote => '''
-最後に、
-  ''';
+ここまで、Fragment Shader とは何か、実装方法はどうするのか、その仕組みはどうなっているのかなどの
+基本的・根本的な部分を見ていきました。
+
+ただこれだけでは、いまいち、実際の開発でどのように役立つのかよく分かりません。
+ですので、最後に、実際の開発でどのように役立つのか、いくつかの実装例を紹介していきます。''';
 }
