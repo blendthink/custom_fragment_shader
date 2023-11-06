@@ -41,6 +41,13 @@ import 'package:custom_fragment_shader/slides/agenda03/agenda03_compile08_slide.
 import 'package:custom_fragment_shader/slides/agenda03/agenda03_compile09_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda03/agenda03_compile10_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda03/agenda03_compile11_slide.dart';
+import 'package:custom_fragment_shader/slides/agenda03/agenda03_load01_slide.dart';
+import 'package:custom_fragment_shader/slides/agenda03/agenda03_load02_slide.dart';
+import 'package:custom_fragment_shader/slides/agenda03/agenda03_load03_slide.dart';
+import 'package:custom_fragment_shader/slides/agenda03/agenda03_load04_slide.dart';
+import 'package:custom_fragment_shader/slides/agenda03/agenda03_load05_slide.dart';
+import 'package:custom_fragment_shader/slides/agenda03/agenda03_load06_slide.dart';
+import 'package:custom_fragment_shader/slides/agenda03/agenda03_load07_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda03/agenda03_title_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda04/agenda04_title_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda_slide.dart';
@@ -102,6 +109,13 @@ final class App extends StatelessWidget {
       Agenda03Compile09Slide(),
       Agenda03Compile10Slide(),
       Agenda03Compile11Slide(),
+      Agenda03Load01Slide(),
+      Agenda03Load02Slide(),
+      Agenda03Load03Slide(),
+      Agenda03Load04Slide(),
+      Agenda03Load05Slide(),
+      Agenda03Load06Slide(),
+      Agenda03Load07Slide(),
       Agenda04TitleSlide(),
       OutroSlide(),
     ];
