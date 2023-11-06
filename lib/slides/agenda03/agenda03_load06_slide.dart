@@ -24,6 +24,17 @@ base class FragmentProgram extends NativeFieldWrapperClass1 {
   @pragma('vm:entry-point')
   late int _samplerCount;
   // ...
+  FragmentShader fragmentShader() => FragmentShader._(this, debugName: _debugName);
+}
+// ...
+base class FragmentShader extends Shader {
+  FragmentShader._(FragmentProgram program, { String? debugName }) : _debugName = debugName, super._() {
+    _floats = _constructor(
+      program,
+      program._uniformFloatCount,
+      program._samplerCount,
+    );
+  }
 }
 // ...''';
 
@@ -57,10 +68,13 @@ base class FragmentProgram extends NativeFieldWrapperClass1 {
 
   @override
   String get speakerNote => '''
-Dart 側で受け取っている部分のコードはこちらです。
+アプリ側で受け取っている部分のコードはこちらです。
 FragmentProgram クラスのフィールドに設定していることが分かります。
 
-ちなみに、この２つの値は何かというと Fragment Shader に渡す変数の数を表しています。''';
+ちなみに、この２つの値は何かというと Fragment Shader に渡す変数の数を表しています。
+
+そして `fragmentShader()` メソッドによって `FragmentShader` クラスのインスタンスを作成して
+アプリ側から利用できるようにしています。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

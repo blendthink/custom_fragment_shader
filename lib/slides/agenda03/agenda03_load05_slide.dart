@@ -78,7 +78,7 @@ std::string FragmentProgram::initFromAsset(const std::string& asset_name) {
 これ以上は時間の都合上省略しますが、このようにすることによって
 Fragment Shader を読み込んでおいて、すぐに実行できる状態にしているようです。
 
-その後に、事前に計算していた値を Dart 側に渡しています。''';
+その後に、事前に計算していた値をアプリ側に渡しています。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(
