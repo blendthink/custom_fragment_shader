@@ -55,6 +55,7 @@ import 'package:custom_fragment_shader/slides/agenda03/agenda03_run04_slide.dart
 import 'package:custom_fragment_shader/slides/agenda03/agenda03_run05_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda03/agenda03_run06_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda03/agenda03_title_slide.dart';
+import 'package:custom_fragment_shader/slides/agenda04/agenda04_pixelation01_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda04/agenda04_title_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda_slide.dart';
 import 'package:custom_fragment_shader/slides/intro_slide.dart';
@@ -128,6 +129,7 @@ final class App extends StatelessWidget {
       Agenda03Run05Slide(),
       Agenda03Run06Slide(),
       Agenda04TitleSlide(),
+      Agenda04Pixelation01Slide(),
       OutroSlide(),
     ];
 
