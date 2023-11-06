@@ -58,7 +58,7 @@ final class OrangeFrame extends StatelessWidget {
     );
 
     return TitleHeaderSlide(
-      title: Agenda.agenda02,
+      title: Agenda.agenda03,
       body: body,
     );
   }

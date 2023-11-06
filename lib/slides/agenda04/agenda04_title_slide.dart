@@ -10,4 +10,9 @@ final class Agenda04TitleSlide extends SlideStatelessWidget {
   Widget build(BuildContext context) {
     return const TitleCenterSlide(Agenda.agenda04);
   }
+
+  @override
+  String get speakerNote => '''
+最後に、
+  ''';
 }
