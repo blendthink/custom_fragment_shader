@@ -3,6 +3,7 @@ import 'package:custom_fragment_shader/framework/highlight/language.dart';
 import 'package:custom_fragment_shader/framework/internal/home/slide_frame_query.dart';
 import 'package:flutter/material.dart';
 import 'package:highlight/highlight_core.dart';
+import 'package:highlight/languages/cpp.dart';
 import 'package:highlight/languages/dart.dart';
 import 'package:highlight/languages/glsl.dart';
 import 'package:highlight/languages/yaml.dart';
@@ -30,6 +31,7 @@ final class HighlightView extends StatelessWidget {
     for (final language in Language.values) {
       final mode = switch (language) {
         Language.dart => dart,
+        Language.cpp => cpp,
         Language.glsl => glsl,
         Language.yaml => yaml,
       };
