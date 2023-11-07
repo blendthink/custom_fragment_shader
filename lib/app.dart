@@ -133,6 +133,7 @@ final class App extends StatelessWidget {
       Agenda03Run06Slide(),
       Agenda04TitleSlide(),
       Agenda04Pixelation01Slide(),
+      Agenda04Pixelation02Slide(),
       Agenda04InkSparkle01Slide(),
       Agenda04HologramEffect01Slide(),
       Agenda04TransitionAnimation01Slide(),
