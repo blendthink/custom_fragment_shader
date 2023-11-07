@@ -49,6 +49,7 @@ flutter:
     - shaders/title_background.frag
     - shaders/orange.frag
     - shaders/gradient.frag
+    - shaders/pixelation.frag
 
 flutter_gen:
   integrations:
