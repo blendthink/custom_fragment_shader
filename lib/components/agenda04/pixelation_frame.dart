@@ -1,5 +1,5 @@
+import 'package:custom_fragment_shader/components/agenda04/scalable_speaker_image.dart';
 import 'package:custom_fragment_shader/framework/internal/home/slide_frame_query.dart';
-import 'package:custom_fragment_shader/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_shaders/flutter_shaders.dart';
 
@@ -9,8 +9,7 @@ final class PixelationFrame extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final frameSize = 200 * context.frameScale;
-    final imageRadius = 100 * context.frameScale;
-    const pixelCount = 30.0;
+    const pixelCount = 20.0;
 
     return SizedBox.square(
       dimension: frameSize,
@@ -29,10 +28,7 @@ final class PixelationFrame extends StatelessWidget {
               Paint()..shader = shader,
             );
           },
-          child: CircleAvatar(
-            backgroundImage: Assets.speaker.image().image,
-            radius: imageRadius,
-          ),
+          child: const ScalableSpeakerImage(),
         ),
       ),
     );
