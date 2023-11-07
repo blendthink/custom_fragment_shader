@@ -58,6 +58,7 @@ import 'package:custom_fragment_shader/slides/agenda03/agenda03_title_slide.dart
 import 'package:custom_fragment_shader/slides/agenda04/agenda04_hologram_effect01_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda04/agenda04_ink_sparkle01_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda04/agenda04_pixelation01_slide.dart';
+import 'package:custom_fragment_shader/slides/agenda04/agenda04_pixelation02_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda04/agenda04_title_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda04/agenda04_transition_animation01_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda_slide.dart';
