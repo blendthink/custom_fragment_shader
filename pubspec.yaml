@@ -53,7 +53,6 @@ flutter:
     - shaders/pixelation.frag
     - shaders/hologram_effect.frag
     - shaders/gloss_effect.frag
-    - shaders/ink_sparkle.frag
 
 flutter_gen:
   integrations:
