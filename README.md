@@ -18,8 +18,8 @@ Flutter 2.8 で Fragment Shader を利用可能になり、GPU 上で処理を�
 - Flutter で Fragment Shader が実行されるまでの仕組み
 - Fragment Shader の実装例と解説
     - Pixelation
-    - Ink Sparkle
     - Hologram Effect
+    - Ink Sparkle
     - Transition Animation
 
 ## 参考資料
