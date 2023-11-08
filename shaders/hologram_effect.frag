@@ -9,7 +9,7 @@ uniform float uTime;
 
 uniform sampler2D uTexture;
 
-const float PI  = 3.141592653589793;
+const float PI = 3.141592653589793;
 const float PI_SQUARE = PI * 2.;
 
 // 斜め方向の虹色の変化を計算
