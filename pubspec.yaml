@@ -51,6 +51,7 @@ flutter:
     - shaders/orange.frag
     - shaders/gradient.frag
     - shaders/pixelation.frag
+    - shaders/hologram_effect.frag
 
 flutter_gen:
   integrations:
