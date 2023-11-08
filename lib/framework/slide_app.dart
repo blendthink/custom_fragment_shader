@@ -61,6 +61,7 @@ class _SlideAppState extends State<SlideApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       title: 'Custom Fragment Shader',
       theme: widget._theme,
       shortcuts: _shortcuts,
