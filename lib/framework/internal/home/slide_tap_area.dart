@@ -7,6 +7,10 @@ final class SlideTapArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (!kIsWeb) {
+      return const SizedBox.shrink();
+    }
+
     final Color hoverColor;
     if (kIsWeb) {
       hoverColor = Theme.of(context).hoverColor;
