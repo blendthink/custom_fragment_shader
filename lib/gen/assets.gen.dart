@@ -96,6 +96,17 @@ class $AssetsAgenda02Gen {
       [document, flutterShaders, glslProfiles, glslVersions, youtube];
 }
 
+class $AssetsAgenda04Gen {
+  const $AssetsAgenda04Gen();
+
+  /// File path: assets/agenda04/uv_coordinates.png
+  AssetGenImage get uvCoordinates =>
+      const AssetGenImage('assets/agenda04/uv_coordinates.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [uvCoordinates];
+}
+
 class $GoogleFontsPoppinsGen {
   const $GoogleFontsPoppinsGen();
 
@@ -191,6 +202,7 @@ class Assets {
 
   static const $AssetsAgenda01Gen agenda01 = $AssetsAgenda01Gen();
   static const $AssetsAgenda02Gen agenda02 = $AssetsAgenda02Gen();
+  static const $AssetsAgenda04Gen agenda04 = $AssetsAgenda04Gen();
   static const SvgGenImage flutterkaigiLogo =
       SvgGenImage('assets/flutterkaigi_logo.svg');
   static const AssetGenImage speaker = AssetGenImage('assets/speaker.png');

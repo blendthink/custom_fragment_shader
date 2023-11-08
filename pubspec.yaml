@@ -44,6 +44,7 @@ flutter:
     - assets/
     - assets/agenda01/
     - assets/agenda02/
+    - assets/agenda04/
     - google_fonts/Poppins/
   shaders:
     - shaders/title_background.frag
