@@ -45,6 +45,5 @@ void main() {
     float glossIntensity = getGlossIntensity(rotatedUV, uTime);
     vec3 glossColor = getGlossColor(texColor, rainbowColor, glossIntensity);
 
-    vec3 hologramColor = mix(texColor, texColor + glossColor, 0.5);
-    fragColor = vec4(hologramColor, 1.0);
+    fragColor = vec4(glossColor, 1.0);
 }

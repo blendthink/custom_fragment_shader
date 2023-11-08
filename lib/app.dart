@@ -57,6 +57,10 @@ import 'package:custom_fragment_shader/slides/agenda03/agenda03_run06_slide.dart
 import 'package:custom_fragment_shader/slides/agenda03/agenda03_title_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda04/agenda04_hologram_effect01_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda04/agenda04_hologram_effect02_slide.dart';
+import 'package:custom_fragment_shader/slides/agenda04/agenda04_hologram_effect03_slide.dart';
+import 'package:custom_fragment_shader/slides/agenda04/agenda04_hologram_effect04_slide.dart';
+import 'package:custom_fragment_shader/slides/agenda04/agenda04_hologram_effect05_slide.dart';
+import 'package:custom_fragment_shader/slides/agenda04/agenda04_hologram_effect06_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda04/agenda04_ink_sparkle01_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda04/agenda04_pixelation01_slide.dart';
 import 'package:custom_fragment_shader/slides/agenda04/agenda04_pixelation02_slide.dart';
@@ -151,6 +155,10 @@ final class App extends StatelessWidget {
       Agenda04InkSparkle01Slide(),
       Agenda04HologramEffect01Slide(),
       Agenda04HologramEffect02Slide(),
+      Agenda04HologramEffect03Slide(),
+      Agenda04HologramEffect04Slide(),
+      Agenda04HologramEffect05Slide(),
+      Agenda04HologramEffect06Slide(),
       Agenda04TransitionAnimation01Slide(),
       OutroSlide(),
     ];
