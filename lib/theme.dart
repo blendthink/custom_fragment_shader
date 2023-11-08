@@ -39,7 +39,7 @@ const _appColorScheme = ColorScheme(
   background: Color(0xFF141218),
   onBackground: Color(0xFFE6E0E9),
   surface: Color(0xFF141218),
-  onSurface: Color(0xFFE6E0E9),
+  onSurface: Color(0xFFFFFFFF),
   surfaceVariant: Color(0xFF49454F),
   onSurfaceVariant: Color(0xFFCAC4D0),
   inverseSurface: Color(0xFFE6E0E9),
