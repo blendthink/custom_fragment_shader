@@ -1,5 +1,5 @@
 import 'package:custom_fragment_shader/components/agenda04/pixelation_frame.dart';
-import 'package:custom_fragment_shader/components/agenda04/scalable_speaker_image.dart';
+import 'package:custom_fragment_shader/components/agenda04/speaker_image.dart';
 import 'package:custom_fragment_shader/data/agenda.dart';
 import 'package:custom_fragment_shader/framework/internal/home/slide_frame_query.dart';
 import 'package:custom_fragment_shader/framework/slide_widget.dart';
@@ -17,7 +17,7 @@ final class Agenda04Pixelation02Slide extends SlideStatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          const ScalableSpeakerImage(),
+          const SpeakerImage(),
           Icon(
             Icons.arrow_right_alt,
             size: arrowSize,
