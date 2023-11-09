@@ -4,8 +4,8 @@ import 'package:custom_fragment_shader/templates/title_header_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-final class Agenda04TransitionAnimation01Slide extends SlideStatelessWidget {
-  const Agenda04TransitionAnimation01Slide({super.key});
+final class Agenda04Transition02Slide extends SlideStatelessWidget {
+  const Agenda04Transition02Slide({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +13,8 @@ final class Agenda04TransitionAnimation01Slide extends SlideStatelessWidget {
     final textTheme = theme.textTheme;
     final body = Center(
       child: Text(
-        'Transition Animation',
-        style: textTheme.headlineLarge,
+        'Fragment Shader を使えば',
+        style: textTheme.displaySmall,
       ),
     );
 
@@ -26,7 +26,7 @@ final class Agenda04TransitionAnimation01Slide extends SlideStatelessWidget {
 
   @override
   String get speakerNote => '''
-次は Transition Animation について紹介します。''';
+Fragment Shader を使えば''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

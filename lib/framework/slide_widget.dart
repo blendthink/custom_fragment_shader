@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shaders/flutter_shaders.dart';
 import 'package:go_router/go_router.dart';
 
 abstract interface class SlideWidget implements Widget {
@@ -20,4 +21,50 @@ abstract base class SlideStatelessWidget extends StatelessWidget
 
   @override
   String get speakerNote => '';
+}
+
+const _transitionDuration = Duration(seconds: 1);
+
+class TurnTransitionPage<T> extends CustomTransitionPage<T> {
+  const TurnTransitionPage({
+    required super.child,
+    super.name,
+    super.arguments,
+    super.restorationId,
+    super.key,
+  }) : super(
+          transitionsBuilder: _transitionsBuilder,
+          transitionDuration: _transitionDuration,
+          reverseTransitionDuration: _transitionDuration,
+        );
+
+  static Widget _transitionsBuilder(
+    BuildContext context,
+    Animation<double> animation,
+    Animation<double> secondaryAnimation,
+    Widget child,
+  ) {
+    animation.value;
+    secondaryAnimation.value;
+    return ShaderBuilder(
+      assetKey: 'shaders/transition.frag',
+      (context, shader, _) {
+        return AnimatedSampler(
+          (image, size, canvas) {
+            shader.setFloatUniforms((uniforms) {
+              uniforms
+                ..setSize(size)
+                ..setFloat(animation.value);
+            });
+            shader.setImageSampler(0, image);
+            canvas.drawRect(
+              Offset.zero & size,
+              Paint()..shader = shader,
+            );
+          },
+          child: child,
+        );
+      },
+    );
+  }
 }
