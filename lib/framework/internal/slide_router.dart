@@ -1,6 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:custom_fragment_shader/framework/internal/home/slide_home.dart';
 import 'package:custom_fragment_shader/framework/slide_widget.dart';
+import 'package:desktop_multi_window/desktop_multi_window.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -67,6 +68,7 @@ final class SlideRouter {
 
     final slideRoute = _slideRoutes[prevIndex];
     routerConfig.go(slideRoute.path);
+    DesktopMultiWindow.invokeMethod(1, "updateSlideIndex", prevIndex);
   }
 
   void next() {
@@ -79,6 +81,7 @@ final class SlideRouter {
 
     final slideRoute = _slideRoutes[nextIndex];
     routerConfig.go(slideRoute.path);
+    DesktopMultiWindow.invokeMethod(1, "updateSlideIndex", nextIndex);
   }
 
   void goToSlide(int index) {
@@ -86,6 +89,7 @@ final class SlideRouter {
 
     final slideRoute = _slideRoutes[index];
     routerConfig.go(slideRoute.path);
+    DesktopMultiWindow.invokeMethod(1, "updateSlideIndex", index);
   }
 
   int get currentIndex => _slideRoutes.indexWhere(

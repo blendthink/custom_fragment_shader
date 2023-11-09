@@ -84,4 +84,5 @@ const _shortcuts = <ShortcutActivator, Intent>{
   SingleActivator(LogicalKeyboardKey.arrowRight): NextIntent(),
   SingleActivator(LogicalKeyboardKey.period): MenuIntent(),
   SingleActivator(LogicalKeyboardKey.keyL): LicenseIntent(),
+  SingleActivator(LogicalKeyboardKey.keyP): PresentationIntent(),
 };

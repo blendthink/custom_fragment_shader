@@ -15,3 +15,7 @@ final class MenuIntent extends Intent {
 final class LicenseIntent extends Intent {
   const LicenseIntent();
 }
+
+final class PresentationIntent extends Intent {
+  const PresentationIntent();
+}
