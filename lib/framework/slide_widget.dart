@@ -37,32 +37,32 @@ class DotsCurtainTransitionPage<T> extends CustomTransitionPage<T> {
           transitionDuration: _transitionDuration,
           reverseTransitionDuration: _transitionDuration,
         );
+}
 
-  static Widget _transitionsBuilder(
-    BuildContext context,
-    Animation<double> animation,
-    Animation<double> secondaryAnimation,
-    Widget child,
-  ) {
-    return ShaderBuilder(
-      assetKey: 'shaders/transition.frag',
-      (context, shader, _) {
-        return AnimatedSampler(
-          (image, size, canvas) {
-            shader.setFloatUniforms((uniforms) {
-              uniforms
-                ..setSize(size)
-                ..setFloat(animation.value);
-            });
-            shader.setImageSampler(0, image);
-            canvas.drawRect(
-              Offset.zero & size,
-              Paint()..shader = shader,
-            );
-          },
-          child: child,
-        );
-      },
-    );
-  }
+Widget _transitionsBuilder(
+  BuildContext context,
+  Animation<double> animation,
+  Animation<double> secondaryAnimation,
+  Widget child,
+) {
+  return ShaderBuilder(
+    assetKey: 'shaders/transition.frag',
+    (context, shader, _) {
+      return AnimatedSampler(
+        (image, size, canvas) {
+          shader.setFloatUniforms((uniforms) {
+            uniforms
+              ..setSize(size)
+              ..setFloat(animation.value);
+          });
+          shader.setImageSampler(0, image);
+          canvas.drawRect(
+            Offset.zero & size,
+            Paint()..shader = shader,
+          );
+        },
+        child: child,
+      );
+    },
+  );
 }
