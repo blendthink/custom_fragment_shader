@@ -44,8 +44,6 @@ class DotsCurtainTransitionPage<T> extends CustomTransitionPage<T> {
     Animation<double> secondaryAnimation,
     Widget child,
   ) {
-    animation.value;
-    secondaryAnimation.value;
     return ShaderBuilder(
       assetKey: 'shaders/transition.frag',
       (context, shader, _) {
