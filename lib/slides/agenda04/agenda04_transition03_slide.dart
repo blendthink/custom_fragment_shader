@@ -30,9 +30,10 @@ final class Agenda04Transition03Slide extends SlideStatelessWidget {
 では、どのように実装していくのか見ていきましょう。''';
 
   @override
-  GoRouterPageBuilder get pageBuilder => (context, state) => TurnTransitionPage(
-        key: state.pageKey,
-        restorationId: state.pageKey.value,
-        child: this,
-      );
+  GoRouterPageBuilder get pageBuilder =>
+      (context, state) => DotsCurtainTransitionPage(
+            key: state.pageKey,
+            restorationId: state.pageKey.value,
+            child: this,
+          );
 }

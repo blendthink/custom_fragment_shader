@@ -25,8 +25,8 @@ abstract base class SlideStatelessWidget extends StatelessWidget
 
 const _transitionDuration = Duration(seconds: 1);
 
-class TurnTransitionPage<T> extends CustomTransitionPage<T> {
-  const TurnTransitionPage({
+class DotsCurtainTransitionPage<T> extends CustomTransitionPage<T> {
+  const DotsCurtainTransitionPage({
     required super.child,
     super.name,
     super.arguments,
