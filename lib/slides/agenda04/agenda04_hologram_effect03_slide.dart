@@ -48,8 +48,7 @@ out vec4 fragColor;
 
   @override
   String get speakerNote => '''
-まずは、Fragment Shader の実装からです。
-必須のものを書いて
+まずは、必須のものを書いて
 
 次に、Hologram Effect に必要なものを書いていきます。''';
 

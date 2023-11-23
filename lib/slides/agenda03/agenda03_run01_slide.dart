@@ -65,10 +65,9 @@ final class OrangeFrame extends StatelessWidget {
 
   @override
   String get speakerNote => '''
-実際に描画している部分は、この `AnimatedSampler` の `builder` の
-`canvas.drawRect` の部分です。
+実際に描画している部分は、`AnimatedSampler` の `builder` の `canvas.drawRect` の部分です。
 
-`Paint` の `shader` に Fragment Shader を設定することによって何が起こるのかを見ていきましょう。''';
+その引数で指定している `paint` の `shader` に Fragment Shader を設定することによって何が起こるのかを見ていきましょう。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

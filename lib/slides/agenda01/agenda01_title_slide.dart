@@ -13,5 +13,5 @@ final class Agenda01TitleSlide extends SlideStatelessWidget {
 
   @override
   String get speakerNote => '''
-それでは、はじめに Fragment Shader とは何かについて見ていきます。''';
+それでは、はじめに Fragment Shader とは何かについてお話します。''';
 }

@@ -69,12 +69,9 @@ base class FragmentShader extends Shader {
   @override
   String get speakerNote => '''
 アプリ側で受け取っている部分のコードはこちらです。
-FragmentProgram クラスのフィールドに設定していることが分かります。
+`FragmentProgram` クラスのフィールドに設定していることが分かります。
 
-ちなみに、この２つの値は何かというと Fragment Shader に渡す変数の数を表しています。
-
-そして `fragmentShader()` メソッドによって `FragmentShader` クラスのインスタンスを作成して
-アプリ側から利用できるようにしています。''';
+そして `fragmentShader()` メソッドによって `FragmentShader` クラスのインスタンスを作成して、アプリ側から利用できるようにしています。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

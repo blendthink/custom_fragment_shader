@@ -67,8 +67,8 @@ base class FragmentProgram extends NativeFieldWrapperClass1 {
   String get speakerNote => '''
 `_constructor()` メソッドを呼び出して、`_initFromAsset()` メソッドを呼び出しています。
 
-どちらも ffi を使って C++ の関数を呼び出しています。
-`_initFromAsset()` メソッドの中身を少し覗いてみると''';
+どちらも ffi を使って C++ のメソッドを呼び出しています。
+C++ の `initFromAsset` メソッドを少し覗いてみると''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

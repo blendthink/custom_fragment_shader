@@ -24,8 +24,7 @@ final class Agenda04HologramEffect02Slide extends SlideStatelessWidget {
   String get speakerNote => '''
 Hologram Effect とは
 
-複雑な光の相互作用によって、存在しない奥行きや空間の錯覚を与え、
-2D 表面から 3D イメージを作り出します。
+複雑な光の相互作用によって、存在しない奥行きや空間の錯覚を与えて、2D 表面から 3D イメージを作り出します。
 
 ご覧のように、白色に近い色のみにエフェクトをかけることによって、立体感が発生します。
 

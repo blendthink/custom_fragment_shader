@@ -25,7 +25,7 @@ final class Agenda04Transition03Slide extends SlideStatelessWidget {
 
   @override
   String get speakerNote => '''
-ご覧のような遷移アニメーションを簡単に実装することができます。
+ご覧のような Transition Animation を簡単に実装することができます。
 
 では、どのように実装していくのか見ていきましょう。''';
 

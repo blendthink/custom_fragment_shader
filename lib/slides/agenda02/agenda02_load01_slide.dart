@@ -46,11 +46,9 @@ flutter:
 
   @override
   String get speakerNote => '''
-まずは、pubspec.yaml の flutter に shaders という項目を追加して
-その中に先ほど作成したプログラムファイルのファイルパスを追加します。
+まずは、pubspec.yaml の flutter の shaders という項目を追加して、その中に先ほど作成したプログラムファイルのファイルパスを記述します。
 
-このように設定することによって、シェーダーが適切にコンパイルされ
-必要なランタイムメタデータを自動的に生成するようになります。''';
+このように設定することによって、シェーダーが適切にコンパイルされ、必要なランタイムメタデータを自動的に生成するようになります。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

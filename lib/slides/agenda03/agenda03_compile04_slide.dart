@@ -66,8 +66,8 @@ class FlutterBuildSystem extends BuildSystem {
 
   @override
   String get speakerNote => '''
-ざっくり見てみると、target から node を作り出して `buildInstance` の `invokeTarget()` メソッドを呼び出しているようです。
-その中身を確認してみると''';
+ざっくり見てみると `target` から `node` を作り出して `buildInstance` の `invokeTarget()` メソッドを呼び出しているようです。
+`invokeTarget()` メソッドのその中身をみてみると''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

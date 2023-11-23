@@ -56,7 +56,9 @@ GoRouter(
 
   @override
   String get speakerNote => '''
-あとは、go_router の設定でご覧のように pageBuilder に設定するだけです。''';
+あとはご覧のように、`GoRoute` クラスの `pageBuilder` に設定するだけです。
+
+これで Transition Animation の実装は完了です。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

@@ -99,16 +99,16 @@ Rect.fromLTWH(0, 0, size.width, size.height)
 
   @override
   String get speakerNote => '''
-描画処理は AnimatedSampler の builder の引数として渡ってくる canvas を使って実装します。
-canvas には、描画するためのメソッドがいくつか用意されていますが、Fragment Shader では drawRect を使うことが多いと思います。
+描画処理は AnimatedSampler の builder の引数として渡ってくる canvas を使います。
+Canvas クラスには、描画するためのメソッドがいくつか用意されていますが、Fragment Shader では drawRect メソッドを使うことが多いと思います。
 
 drawRect の第一引数では描画する領域を指定して、第二引数では描画するための Paint を指定します。
 
-Offset.zero & size の意味は、右のような Rect を作成する処理と同じ意味です。
+ここで第一引数に指定している Offset.zero & size の意味は、右のような Rect を作成する処理と同じ意味です。
 このように Offset には便利な Operator が用意されているので、簡単に Rect を作成できます。
 
 Paint には、shader というプロパティがあるので、そこに ShaderBuilder から渡される shader を設定します。
-これで大体アプリで実行する部分の実装は完了です。
+これで大体、アプリで実行する部分の実装は完了です。
 あとは、アプリに組み込んで動かしてみましょう。''';
 
   @override

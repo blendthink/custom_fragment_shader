@@ -64,11 +64,10 @@ void Canvas::drawRect(double left,
 
   @override
   String get speakerNote => '''
-そして、描画の設定が行われた変数を `Builder` の `DrawRect()` メソッドに渡して描画を行っているようですが
-時間の都合上、省略されていただきます。
+`Builder` の `DrawRect()` メソッドに渡して描画を行っています。
 
-この後は描画エンジンの Skia の処理に移っていき、より複雑な処理が増えてきます。
-ソースコードは GitHub に公開されていますので、興味ある方はぜひ覗いてみていただければと思います。''';
+この後は描画エンジンの Skia の処理に移っていき、より複雑な処理が増えてきますので、時間の都合上省略します。
+Skia のソースコードは GitHub に公開されていますので、興味ある方はぜひ覗いてみていただければと思います。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

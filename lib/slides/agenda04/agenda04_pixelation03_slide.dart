@@ -49,9 +49,8 @@ out vec4 fragColor;
   @override
   String get speakerNote => '''
 まずは、Fragment Shader の実装からです。
-必須のものを書いて
 
-次に、Pixelation に必要なものを書いていきます。''';
+必須のものを書いて、次に、Pixelation に必要なものを書いていきます。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

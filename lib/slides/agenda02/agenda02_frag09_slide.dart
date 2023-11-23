@@ -57,10 +57,11 @@ out vec4 fragColor;
   @override
   String get speakerNote => '''
 続いて、オレンジ色を表す変数を定義します。
-オレンジ色は 16 進数で表すと 0x FF FF A5 00 で、ARGB の順になっています。
+
+オレンジ色は 16 進数で表すと FF FF A5 00 で、ARGB の順になっています。
 ですので、FF は Alpha、次の FF は Red、A5 は Green、00 は Blue の値を表しています。
 
-ただし、GLSL では 0 ~ 1 の範囲で色を表現しなければならず、順序も RGBA になっているため注意が必要です。''';
+ただし、GLSL では 0 から 1 の範囲で色を表現しなければならず、順序も RGBA の順なので注意が必要です。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

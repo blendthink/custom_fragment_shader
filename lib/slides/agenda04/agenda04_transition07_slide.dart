@@ -56,13 +56,12 @@ class DotsCurtainTransitionPage<T> extends CustomTransitionPage<T> {
 
   @override
   String get speakerNote => '''
-アプリ側の実装方法もいくつか方法があると思いますが、今回は
-go_router の CustomTransitionPage を使った方法をご紹介いたします。
+アプリ側の実装方法もいくつか方法があると思いますが、今回は `go_router` パッケージの `CustomTransitionPage` を使った方法をご紹介いたします。
 
-まずは CustomTransitionPage というカスタマイズ用のクラスを継承したクラスを作成します。
-ここでは遷移アニメーションの時間は 1 秒に設定しています。
+まずは `CustomTransitionPage` を継承したクラスを作成します。
+いったん、遷移アニメーションの時間は 1 秒に設定しておきます。
 
-次に transitionsBuilder 部分を実装すれば完了です。''';
+次に `transitionsBuilder` 部分を実装すれば完了です。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

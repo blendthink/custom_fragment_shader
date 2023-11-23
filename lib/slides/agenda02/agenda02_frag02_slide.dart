@@ -51,7 +51,7 @@ final class Agenda02Frag02Slide extends SlideStatelessWidget {
   @override
   String get speakerNote => '''
 全てをオレンジ色で描画する Fragment Shader を作成するので
-orange.frag という名前にします。''';
+orange.frag という名前にしておきます。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

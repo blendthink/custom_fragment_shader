@@ -46,7 +46,7 @@ out vec4 fragColor;''';
 
   @override
   String get speakerNote => '''
-次に、FragmentShader が出力する色を表す、変数を定義します。
+次に、FragmentShader が出力する色を表す変数を定義します。
 GLSL では RGBA の４つの値で色を表すので、変数の型は vec4 にする必要があります。
 変数名は Fragment Color という意味で、fragColor と定義してみます。''';
 

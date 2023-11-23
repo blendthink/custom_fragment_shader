@@ -57,9 +57,9 @@ final class OrangeFrame extends StatelessWidget {
 
   @override
   String get speakerNote => '''
-では、次に`ShaderBuilder` の実装部分、アプリ側から Fragment Shader を読み込む部分がどうなっているのかを見ていきます。
+では次に、アプリ側で Fragment Shader を読み込む部分がどうなっているのかを見ていきます。
 
-`assetKey` で指定した値がどこで使われているか確認すると''';
+`ShaderBuilder` の `assetKey` で Fragment Shader 用のプログラムファイルパスを指定していたので、 `ShaderBuilder` の実装を確認すれば良さそうです。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

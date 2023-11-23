@@ -37,10 +37,10 @@ final class Agenda04InkSparkle02Slide extends SlideStatelessWidget {
   String get speakerNote => '''
 Ink Sparkle とは、ご覧のようにタップした時に輝いているような波紋を表示するエフェクトです。
 
-これは、Android 12　から Material 3 が有効の際にデフォルトで有効になるということが判明して
-Flutter でもこのエフェクトに対応したいということで導入されました。
+これは、Android 12　から Material 3 が有効の際にデフォルトで有効になる機能で、Flutter でもこのエフェクトに対応したいということで導入されました。
 
-Flutter では Fragment Shader を使ってこのエフェクトを実現しています。''';
+Flutter では Fragment Shader を使ってこのエフェクトを実現しています。
+実装部分をみてみると''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

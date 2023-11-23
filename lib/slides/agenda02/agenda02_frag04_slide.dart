@@ -60,8 +60,7 @@ final class Agenda02Frag04Slide extends SlideStatelessWidget {
 
   @override
   String get speakerNote => '''
-今回はバージョン 4.60 を使用するので、メジャーバージョンとマイナーバージョンを
-ピリオドなしで繋いで 460 と指定します。''';
+今回はバージョン 4.60 の最新バージョンを使用するので、メジャーバージョンとマイナーバージョンを、ドットなしで繋いで 460 と指定します。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

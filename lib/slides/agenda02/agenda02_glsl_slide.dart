@@ -32,7 +32,9 @@ final class Agenda02GlslSlide extends SlideStatelessWidget {
   @override
   String get speakerNote => '''
 はじめに話しておくと Fragment Shader 用のプログラムファイルは Dart では記述しません。
-GLSL という別の言語で記述します。''';
+GLSL という別の言語で記述します。
+
+GLSL とは''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

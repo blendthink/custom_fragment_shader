@@ -61,7 +61,7 @@ dependencies:
 
   @override
   String get speakerNote => '''
-次に、公式でも紹介されている flutter_shaders というパッケージを dependencies に追加します。
+次に、公式でも紹介されている flutter_shaders という便利なパッケージを dependencies に追加します。
 このパッケージは  Fragment Shader を取り扱う際に、様々な面倒な作業を簡単にできるようにしてくれます。''';
 
   @override

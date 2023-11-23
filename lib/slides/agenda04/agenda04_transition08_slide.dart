@@ -66,7 +66,7 @@ Widget _transitionsBuilder(
 
   @override
   String get speakerNote => '''
-transitionsBuilder 部分はご覧のようにします。
+`transitionsBuilder` 部分はご覧のように実装します。
 これまでとほとんど変わらず、それぞれ必要な値を設定するだけです。''';
 
   @override

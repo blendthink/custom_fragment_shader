@@ -57,16 +57,16 @@ const vec2 center = vec2(0, 0);
 
   @override
   String get speakerNote => '''
-今回の Transition Animation に必要なものは３つあります。
+今回の Transition Animation に必要なものは
 
-１つは、描画する全体のサイズ
-２つは、0-1 の進行状況
-最後は、画像データ
+描画する全体のサイズ
+0 から 1 の進行状況
+画像データ
 
-です。
+の 3 つです。
 
-そして、ルート２の値と、ドットの数、アニメーションのスタート位置を定義しています。
-最後にメインの実装部分を見ていきます。''';
+ただし、ルート２の値、ドットの数、アニメーションのスタート位置は計算上必要なため別途定義しています。
+最後にメイン部分の実装を見ていきます。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

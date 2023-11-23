@@ -71,12 +71,11 @@ class DebugMacOSBundleFlutterAssets extends MacOSBundleFlutterAssets {
   @override
   String get speakerNote => '''
 `DebugMacOSBundleFlutterAssets` は `MacOSBundleFlutterAssets` を継承していて
-それの `build()` メソッドが呼ばれていました。
+その `build()` メソッドが呼ばれるようになっていました。
 
-実装を確認すると、アセット用の出力先のディレクトリを作成して
-`copyAssets()` というメソッドを呼び出していることが分かります。
+実装を確認すると、アセット用の出力先のディレクトリを作成して `copyAssets()` メソッドを呼び出していることが分かります。
 
-この `copyAssets()` メソッドの中身を確認してみると''';
+`copyAssets()` メソッドの中身を確認してみると''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

@@ -37,5 +37,7 @@ final class Agenda01PipelineSlide extends SlideStatelessWidget {
   @override
   String get speakerNote => '''
 Fragment Shader とは、レンダリングパイプラインの一部で、各ピクセルの色や他の属性を計算するためのコンピュータプログラムです。
-レンダリングパイプラインとは、3Dグラフィックスを2Dの表示画面に描画するまでのプロセスを示しています。''';
+レンダリングパイプラインとは、3Dグラフィックスを2Dの表示画面に描画するまでのプロセスを示しています。
+
+Fragment Shader のレンダリングパイプライン上での位置は''';
 }

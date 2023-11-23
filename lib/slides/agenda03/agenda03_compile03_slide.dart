@@ -59,10 +59,11 @@ List<FlutterCommand> generateCommands({
   @override
   String get speakerNote => '''
 確認してみると、`globals` の `buildSystem` が渡されていることが分かります。
-`globals` の `buildSystem` は何かというと `FlutterBuildSystem` というクラスのインスタンスです。
-なぜそうなるかは、時間の関係上省略させていただきます。
 
-では、`FlutterBuildSystem` の `build()` メソッドでは何をしているのかを確認してみましょう。''';
+`globals` の `buildSystem` は何者かというと `FlutterBuildSystem` というクラスのインスタンスです。
+なぜそうなるかは、時間の都合上省略させていただきます。
+
+では、`FlutterBuildSystem` の `build()` メソッドでは何をしているのかをみていきましょう。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

@@ -51,18 +51,18 @@ uniform sampler2D uTexture;''';
 
   @override
   String get speakerNote => '''
-Hologram Effect に必要なものは実装によって異なります。
+Hologram Effect に必要なものは、光沢の変化をどのようにするのかによって様々です。
 今回は光沢の変化を時間の変化によって表現しているので、必要なものは
 
-１つは、描画する全体のサイズ
-２つは、経過時間
-最後は、画像データ
+描画する全体のサイズ
+経過時間
+画像データ
 
-です。
+の 3 つです。
 
 角度によって光沢の変化を表現したい場合は、経過時間の代わりに角度を渡すことになります。
 
-それでは実際の処理を見ていきます。''';
+それでは実際の処理を見ていきましょう。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

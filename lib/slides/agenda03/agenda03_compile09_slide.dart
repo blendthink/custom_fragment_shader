@@ -76,13 +76,12 @@ Future<Depfile> copyAssets(
 
   @override
   String get speakerNote => '''
-`pubspec.yaml` を解析してアセット情報を取り出して
-それぞれのアセット情報ごとに適切な処理をするようになっています。
+`pubspec.yaml` を解析してアセット情報を取り出して、それぞれのアセット情報ごとに適切な処理を実行するようになっています。
 
 Shader の場合は `ShaderCompiler` の `compileShader()` メソッドを呼び出していることが分かります。
 ここで Shader をコンパイルして、指定した場所に出力しているようです。
 
-念の為 `ShaderCompiler` の実装を確認してみると''';
+`ShaderCompiler` の実装を確認してみると''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

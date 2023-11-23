@@ -47,7 +47,8 @@ final class Agenda02ImplementationFlowSlide extends SlideStatelessWidget {
   @override
   String get speakerNote => '''
 Fragment Shader の実装の流れは
-1. まず、Fragment Shader 用のプログラムファイルを作成します。
-2. 次に、そのプログラムファイルをアプリで読み込む部分を実装します。
-3. 最後に、アプリの中で Fragment Shader を実行する部分を実装します。''';
+
+まず、Fragment Shader 用のプログラムファイルを作成して
+次に、そのプログラムファイルをアプリ側で読み込む部分を実装します。
+ 最後に、アプリの中で Fragment Shader を実行する部分を実装します。''';
 }

@@ -35,8 +35,7 @@ final class Agenda04Pixelation02Slide extends SlideStatelessWidget {
 
   @override
   String get speakerNote => '''
-Pixelation とは、ご覧のように画像をより大きなピクセルのブロックに分割して
-それぞれのピクセルの色を平均化することです。
+Pixelation とは、ご覧のように、画像をより大きなピクセルのブロックに分割して、それぞれのピクセルの色を平均化することです。
 
 これを Fragment Shader を使って実装していきましょう。''';
 

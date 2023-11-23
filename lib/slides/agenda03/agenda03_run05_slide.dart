@@ -70,12 +70,11 @@ const DlPaint* Paint::paint(DlPaint& paint,
 
   @override
   String get speakerNote => '''
-`Paint` クラスのコンストラクタでは、あまり慣れない記法かもしれませんが
-メンバイニシャライザという方法で、クラスのメンバ変数へ代入しています。
+`Paint` クラスのコンストラクタでは、メンバイニシャライザという方法で、クラスのメンバ変数へ各値を代入しています。
 
-その下の `paint()` メソッドでは Shader を適用するフラグが立っていたら
-Shader を扱いやすい形式にデコードして、フィルターの品質を取得してそれも合わせたものを
-`Paint` の `ColorSource` に設定しています。''';
+その下の `paint()` メソッドでは Shader を適用するフラグが立っていたら、Shader を扱いやすい形式にデコードして、フィルターの品質を取得してそれも合わせたものを `Paint` の `ColorSource` に設定しています。
+
+このように描画の設定をしたものを先ほどの''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

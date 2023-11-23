@@ -47,5 +47,5 @@ final class Agenda02ImplementationFlowStep2Slide extends SlideStatelessWidget {
 
   @override
   String get speakerNote => '''
-次に、作成した Fragment Shader 用のプログラムファイルを、アプリで読み込む部分を実装していきます。''';
+次に、作成した Fragment Shader 用のプログラムファイルを、アプリ側で読み込む部分を実装していきます。''';
 }

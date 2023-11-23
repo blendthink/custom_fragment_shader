@@ -24,6 +24,6 @@ final class IntroSlide extends SlideStatelessWidget {
   String get speakerNote => '''
 まずはじめに自己紹介をさせていただきます。
 SNS などでは、おかやまん、もしくは、blendthink という名前でやっています。
-株式会社ゆめみというところで、Flutter テックリードとして活動しています。
+株式会社ゆめみで、Flutter テックリードとして活動しています。
 趣味は将棋やプログラミングです。''';
 }

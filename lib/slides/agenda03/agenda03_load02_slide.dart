@@ -86,7 +86,7 @@ class _ShaderBuilderState extends State<ShaderBuilder> {
 `ShaderBuilder` は `StatefulWidget` なので、`State` に値する `_ShaderBuilderState` というクラスがあります。
 
 この State の `initState()` メソッドで `_loadShader()` メソッドを呼び出しており、
-Shader のキャッシュがあればそれを使い、なければ `FragmentProgram` の `fromAsset()` メソッドを呼び出しています。
+Shader のキャッシュがあればそれを使って、なければ `FragmentProgram` の `fromAsset()` メソッドを呼び出しています。
 そして、Shader のロードが完了したら、その Shader をキャッシュしています。
 
 この `FragmentProgram` の `fromAsset()` メソッドの中身をもう少し見ていきます。''';

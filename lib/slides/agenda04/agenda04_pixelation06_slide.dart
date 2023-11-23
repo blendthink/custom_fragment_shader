@@ -69,9 +69,7 @@ final class PixelationFrame extends StatelessWidget {
 まず、どのくらいのピクセルブロックに分割するかを定数として定義します。
 今回はいったん 20 で定義しておきます。
 
-その後、以前と同様に必要なものを用意します。
-
-あとは、Fragment Shader へ必要なものを渡す部分の実装をすれば完了です。''';
+その後、以前と同様に必要なものを用意して、あとは Fragment Shader へ必要なものを渡す部分の実装をすれば完了です。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

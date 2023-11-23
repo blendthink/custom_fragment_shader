@@ -49,7 +49,7 @@ flutter:
 まずは、pubspec.yaml にこのような設定をすることによって、何が起きるのかをみていきます。
 
 Flutter でアプリを実行するときは `flutter run` コマンドを実行しています。
-`flutter run` コマンドを実行すると、基本的には `flutter assemble` コマンドも自動で実行されるようになっています。
+`flutter run` コマンドを実行すると、基本的に `flutter assemble` コマンドも自動で実行されるようになっています。
 
 この `flutter assemble` コマンドの処理の中身をみていくと、どのようなことが起きているのか分かってきます。''';
 

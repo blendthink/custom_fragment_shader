@@ -62,10 +62,9 @@ void main() {
 
   @override
   String get speakerNote => '''
-ちなみに光沢色をそのまま返すと、ご覧のように元の画像の色がなくなってしまうため注意が必要です。
+ご覧のように元の画像の色がなくなってしまいます。
 
-アプリ側で Fragment Shader を呼び出す部分の実装については
-経過時間を渡す部分以外、これまでと同じなので省略します。''';
+アプリ側で Fragment Shader を呼び出す部分の実装については、経過時間を渡す部分以外、これまでと同じなので省略します。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

@@ -52,7 +52,8 @@ final class OrangeFrame extends StatelessWidget {
   @override
   String get speakerNote => '''
 次に、アプリ側で Fragment Shader を読み込む部分を実装します。
-OrangeFrame という Widget を作成して''';
+
+オレンジ色で塗りつぶす Fragment Shader なので、OrangeFrame という Widget を作成します。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

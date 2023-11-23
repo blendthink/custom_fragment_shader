@@ -57,8 +57,9 @@ final class OrangeFrame extends StatelessWidget {
 
   @override
   String get speakerNote => '''
-ここまで、アプリ側から Fragment Shader を読み込む部分がどうなっているかを見てきました。
-最後に、読み込んだ Fragment Shader を実際に描画する部分を見ていきます。''';
+ここまで、アプリ側で Fragment Shader を読み込む部分がどうなっているかを見てきました。
+
+最後に、読み込んだ Fragment Shader を使って実際に描画する部分を見ていきます。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

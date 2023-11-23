@@ -69,8 +69,8 @@ class ShaderCompiler {
   String get speakerNote => '''
 プラットフォームによって異なる impellerc という実行ファイルを取得して、引数を指定して実行していました。
 
-これによって、プラットフォームによって、シェーダーが適切にコンパイルされ
-必要なランタイムメタデータを自動的に生成されます。''';
+これによって、シェーダーが適切にコンパイルされ、必要なランタイムメタデータを自動的に生成していることが分かりました。
+実際に自動生成されたファイルの中身を確認すると''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

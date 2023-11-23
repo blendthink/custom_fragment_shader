@@ -72,13 +72,10 @@ std::string FragmentProgram::initFromAsset(const std::string& asset_name) {
 `AssetManager` の `GetAsMapping()` メソッドで
 `asset_name` から `Mapping` データを取得しています。
 
-この `Mapping` データを `RuntimeStage` に移譲して、Impeller が有効かどうかで
-異なる `DlRuntimeEffect` を作成しています。
+この `Mapping` データを `RuntimeStage` に移譲して、Impeller が有効かどうかで、異なる `DlRuntimeEffect` を作成しています。
+このように、事前に Fragment Shader を読み込んでおいて、すぐに実行できる状態にしているようです。
 
-これ以上は時間の都合上省略しますが、このようにすることによって
-Fragment Shader を読み込んでおいて、すぐに実行できる状態にしているようです。
-
-その後に、事前に計算していた値をアプリ側に渡しています。''';
+その後、Fragment Shader に渡す変数の数、を表す値をアプリ側に渡しています。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

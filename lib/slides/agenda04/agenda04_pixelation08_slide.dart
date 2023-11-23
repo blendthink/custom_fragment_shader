@@ -71,7 +71,7 @@ final class PixelationFrame extends StatelessWidget {
 
   @override
   String get speakerNote => '''
-ピクセル化したいものを child に指定すれば実装完了です。''';
+ピクセル化したい `Widget` を `child` に指定すれば実装完了です。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

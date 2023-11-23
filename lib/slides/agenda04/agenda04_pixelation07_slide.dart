@@ -66,15 +66,15 @@ final class PixelationFrame extends StatelessWidget {
 
   @override
   String get speakerNote => '''
-Fragment Shader へ値を渡すには、基本的には `setFloat()` というメソッドを利用します。
-第一引数には、変数の宣言した順番を 0 から指定します。
+Fragment Shader へ値を渡す方法は、基本的には `setFloat()` メソッドを使用します。
+Fragment Shader で `vec2` で定義した値はどうするのかというと、2 つの Float として扱います。
 
-ただし、画像データを渡す場合は `setImageSampler()` というメソッドを利用して
-第一引数には、画像データの sampler2D という型の変数の宣言した順番を 0 から指定します。
+ただし、画像データを渡す場合は `setImageSampler()` メソッドを使用します。
 
-AnimatedSampler のコールバック関数の引数の image と size には
-child で指定した Widget のサイズと画像データが渡されるようになっているため
-これをそのまま Fragment Shader に渡します。
+それぞれの第一引数には、Fragment Shader で変数を定義した順番を指定します。
+画像データとそれ以外で順番の管理が異なるため注意が必要です。
+
+`AnimatedSampler` のコールバック引数の `image` と `size` には、`child` で指定した `Widget` の画像データとサイズが渡されるようになっているため、これを Fragment Shader に渡します。
 
 そして最後に''';
 

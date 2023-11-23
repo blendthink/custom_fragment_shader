@@ -67,16 +67,13 @@ class Paint {
 
   @override
   String get speakerNote => '''
-まずは、`Paint` クラスの `shader` セッターで何をしているか確認してみると
-`_ensureObjectsInitialized()` というメソッドを実行して指定の位置に Shader を設定していました。
+まずは `Paint` クラスの `shader` セッターで何をしているのかみてみます。
 
-`_ensureObjectsInitialized()` メソッドでは、`_objects` というフィールドに値が設定されていなければ、
-固定の長さのリストを作成して、`_objects` に設定しています。
+`_ensureObjectsInitialized()` メソッドを実行して、`_objects` の指定の位置に Shader をセットしています。
 
-少し特殊な方法で値を管理していますが、おそらく C++ へ値を受け渡ししやすくするために
-このような実装になっているのだと思います。
+少し特殊な方法で管理していますが、おそらく C++ へ値を受け渡ししやすくするために、このような実装になっているのだと思います。
 
-では、次に `Canvas` クラスを確認してみましょう。''';
+では、次に `Canvas` クラスの実装をみてみましょう。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

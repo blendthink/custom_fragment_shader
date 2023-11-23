@@ -64,9 +64,10 @@ class AssembleCommand extends FlutterCommand {
 
   @override
   String get speakerNote => '''
-`target` は `createTargets()` で作成されているので、その中身を確認すると
+`target` は `createTargets()` メソッドで作成されていて
 
-どうやら、`_kDefaultTargets` という変数から `Target` を作成しているようです。
+どうやら、`_kDefaultTargets` という変数を元に `Target` を作成しているようです。
+
 `_kDefaultTargets` の中身を確認すると''';
 
   @override

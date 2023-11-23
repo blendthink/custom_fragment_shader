@@ -66,14 +66,12 @@ base class _NativeCanvas extends NativeFieldWrapperClass1 implements Canvas {
 
   @override
   String get speakerNote => '''
-`Canvas` クラスは抽象クラスで定義されており
-factory コンストラクタで `_NativeCanvas` クラスのコンストラクタを呼び出してインスタンスを作成しています。
+`Canvas` クラスは抽象クラスで定義されており `factory` コンストラクタで `_NativeCanvas` クラスのインスタンスを作成しています。
 
-肝心の `drawRect()` メソッドで、`_drawRect()` というメソッドに
-`paint` の `_objects` を渡して呼び出しています。
+`_NativeCanvas` の `drawRect()` メソッドでは何をしているのかというと、`paint` の `_objects` を `_drawRect()` メソッドに渡して呼び出しています。
 
-`_drawRect()` メソッドは ffi を使って C++ 側の `Canvas::drawRect()` メソッドを呼び出しています。
-C++ 側のコードも少し見てみると''';
+`_drawRect()` メソッドは ffi を使って C++ の `Canvas::drawRect()` メソッドを呼び出しています。
+C++ の `Canvas::drawRect()` メソッドを少し覗いてみると''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

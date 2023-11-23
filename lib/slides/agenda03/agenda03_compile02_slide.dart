@@ -65,10 +65,9 @@ class AssembleCommand extends FlutterCommand {
 
   @override
   String get speakerNote => '''
-中身をみてみると、`assemble` コマンドはまずターゲットと呼ばれるものを作成して
-それらをゴニョゴニョして `BuildSystem` の `build()` メソッドを呼び出していることが分かります。
+中身をみてみると、`assemble` コマンドはまずターゲットと呼ばれるものを作成して、それらをゴニョゴニョして `BuildSystem` の `build()` メソッドを呼び出していることが分かります。
 
-`BuildSystem` は何かというと `AssembleCommand` のコンストラクタが呼び出されているところを確認する必要があります。''';
+`BuildSystem` は何者なのかを知るには `AssembleCommand` のコンストラクタが呼び出されているところを確認する必要があります。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

@@ -69,8 +69,7 @@ class _BuildInstance {
 
   @override
   String get speakerNote => '''
-`_invokeInternal()` メソッドを呼び出していて、最終的に
-`node` に紐づく `target` の `build()` メソッドを呼び出していることが分かります。
+`_invokeInternal()` メソッドを呼び出していて、最終的に `node` に紐づく `target` の `build()` メソッドを呼び出していることが分かります。
 
 では、`target` とは何かを確認する必要がありそうです。 `AssembleCommand` に戻って確認してみると''';
 

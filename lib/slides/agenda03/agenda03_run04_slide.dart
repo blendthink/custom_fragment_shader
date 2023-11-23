@@ -64,12 +64,11 @@ void Canvas::drawRect(double left,
 
   @override
   String get speakerNote => '''
-Dart ではあまり慣れない記法ですが、はじめに `Paint` クラスのコンストラクタを呼び出して `paint` という変数にインスタンスを設定しています。
+はじめに `Paint` クラスのコンストラクタを呼び出して `paint` という変数にインスタンスを設定しています。
 
-その後、`Paint` クラスの `paint()` メソッドを呼び出して描画の設定を行い
-`Builder` の `DrawRect()` メソッドに、描画の設定が行われた変数を渡して、描画を行っているようです。
+その後、`Paint` クラスの `paint()` メソッドを呼び出して描画の設定を行い、それを `Builder` の `DrawRect()` メソッドに渡して描画を行っているようです。
 
-せっかくなので `Paint` クラスの `paint()` メソッドの処理も見てみます。''';
+せっかくなので `Paint` クラスのも少し見てみます。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

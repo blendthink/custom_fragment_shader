@@ -17,5 +17,5 @@ final class TitleSlide extends SlideStatelessWidget {
   }
 
   @override
-  String get speakerNote => 'それでは発表をはじめさせていただきます。';
+  String get speakerNote => 'それでは発表をはじめます。';
 }

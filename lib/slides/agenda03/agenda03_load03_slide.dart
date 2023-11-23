@@ -66,7 +66,7 @@ base class FragmentProgram extends NativeFieldWrapperClass1 {
   @override
   String get speakerNote => '''
 `_shaderRegistry` というキャッシュ置き場のようなものがあって、そこに `FragmentProgram` をキャッシュしています。
-キャッシュがあればそれを使い、なければ `FragmentProgram` の `_fromAsset()` メソッドを呼び出して
+キャッシュがあればそれを使って、なければ `FragmentProgram` の `_fromAsset()` メソッドを呼び出して
 新たに `FragmentProgram` を作成して、その後、キャッシュに保存しています。
 
 `_fromAsset()` メソッドでは何をしているかというと''';

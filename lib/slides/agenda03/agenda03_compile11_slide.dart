@@ -73,11 +73,11 @@ orange_fragment_main''';
 
   @override
   String get speakerNote => '''
-実際に自動生成されたファイルの中身を確認するとご覧のようになっていました。
+ご覧のようになっていました。
 
-どうやら MacOS アプリでは SkSL Shader が生成されるようになっているようです。
+どうやら MacOS アプリでは SkSL Shader が生成されるようです。
 
-これで `pubspec.yaml` に `shaders` を追加することで、何が起こるのかという部分が分かりました。''';
+これで `pubspec.yaml` に `shaders` を追加することで、何が起こるのかが分かりました。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(

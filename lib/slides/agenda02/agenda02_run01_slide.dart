@@ -63,8 +63,8 @@ final class OrangeFrame extends StatelessWidget {
   @override
   String get speakerNote => '''
 flutter_shaders パッケージの AnimatedSampler という Widget を使えば簡単です。
-ShaderBuilder の中で AnimatedSampler を返却するようにして
-AnimatedSampler の引数の builder の中で描画処理を実装します。
+
+ShaderBuilder の中で AnimatedSampler を返却するようにして、AnimatedSampler の引数の builder の中で描画処理を実装します。
 
 ちなみに、今回、child には特に指定する必要はないので、SizedBox.shrink() を指定しています。''';
 
