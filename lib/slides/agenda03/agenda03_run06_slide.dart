@@ -66,8 +66,8 @@ void Canvas::drawRect(double left,
   String get speakerNote => '''
 `Builder` の `DrawRect()` メソッドに渡して描画を行っています。
 
-この後は描画エンジンの Skia の処理に移っていき、より複雑な処理が増えてきますので、時間の都合上省略します。
-Skia のソースコードは GitHub に公開されていますので、興味ある方はぜひ覗いてみていただければと思います。''';
+この後は、描画エンジンの処理に移っていき、より複雑になりますので、時間の都合上省略します。
+描画エンジンのソースコードは GitHub に公開されていますので、興味ある方はぜひ覗いてみていただければと思います。''';
 
   @override
   GoRouterPageBuilder get pageBuilder => (context, state) => NoTransitionPage(
