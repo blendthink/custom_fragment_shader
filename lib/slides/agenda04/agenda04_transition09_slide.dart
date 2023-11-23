@@ -22,7 +22,7 @@ GoRouter(
       pageBuilder: (context, state) => DotsCurtainTransitionPage(
         key: state.pageKey,
         restorationId: state.pageKey.value,
-        child: DemoPage(),,
+        child: DemoPage(),
       ),
     ),
   ],
